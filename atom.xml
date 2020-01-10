@@ -39,4 +39,26 @@
     
   </entry>
   
+  <entry>
+    <title>MarkDown语法</title>
+    <link href="https://deaningo.github.io/2013/07/13/markdownuse.html/"/>
+    <id>https://deaningo.github.io/2013/07/13/markdownuse.html/</id>
+    <published>2013-07-13T12:46:25.000Z</published>
+    <updated>2020-01-10T08:28:55.208Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MarkDown语法"><a href="#MarkDown语法" class="headerlink" title="MarkDown语法"></a>MarkDown语法</h1><h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><h3 id="1-使用-和-标记一级和二级标题"><a href="#1-使用-和-标记一级和二级标题" class="headerlink" title="1.使用 = 和 - 标记一级和二级标题"></a>1.使用 = 和 - 标记一级和二级标题</h3><blockquote><p>输入标题文字，shift + enter 另起一行， 输入两个或两个以上 “ = / - ” 。<br>    一级标题<br>    ==</p></blockquote><pre><code>二级标题--</code></pre><h3 id="2-使用-号标记"><a href="#2-使用-号标记" class="headerlink" title="2.使用 # 号标记"></a>2.使用 # 号标记</h3><pre><code># 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题</code></pre><h2 id="二、段落"><a href="#二、段落" class="headerlink" title="二、段落"></a>二、段落</h2><h3 id="1-字体"><a href="#1-字体" class="headerlink" title="1.字体"></a>1.字体</h3><pre><code>*斜体文本*_斜体文本_**粗体文本**__粗体文本__***粗斜体文本***___粗斜体文本___</code></pre><h3 id="2-分割线"><a href="#2-分割线" class="headerlink" title="2.分割线"></a>2.分割线</h3><pre><code>在一行中用三个以上的星号、减号、底线来建立一个分隔线。***---___</code></pre><h3 id="3-删除线"><a href="#3-删除线" class="headerlink" title="3.删除线"></a>3.删除线</h3><blockquote><p>在文字的两端加上两个波浪线 <del>~<br>    ~</del>BAIDU.COM~~</p></blockquote><h3 id="4-下划线"><a href="#4-下划线" class="headerlink" title="4.下划线"></a>4.下划线</h3><blockquote><p>可以通过 HTML 的 <u> 标签来实现<br>    <u>带下划线的内容</u><br><u>带下划线的内容</u></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;MarkDown语法&quot;&gt;&lt;a href=&quot;#MarkDown语法&quot; class=&quot;headerlink&quot; title=&quot;MarkDown语法&quot;&gt;&lt;/a&gt;MarkDown语法&lt;/h1&gt;&lt;h2 id=&quot;一、标题&quot;&gt;&lt;a href=&quot;#一、标题&quot; class=&quot;head
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
 </feed>
