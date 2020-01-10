@@ -31,7 +31,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1578644295994">
+  <link rel="stylesheet" href="/css/style.css?v=1578644446347">
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="亦初丨星空灬" type="application/atom+xml">
 </head>
 
@@ -56,7 +56,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>2</div>
+        <div><span>文章</span>1</div>
         <div><span>标签</span>1</div>
         <div><span>文章分类</span>1</div>
     </div>
@@ -120,7 +120,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/生活/">生活</a>
-          <span class="category-list-count">2</span>
+          <span class="category-list-count">1</span>
         </li>
 
         
@@ -150,250 +150,6 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts" id="brand-waterfall">
-    
-    <div class="nexmoe-post">
-        <a href="/2019/04/24/life%20-%20%E5%89%AF%E6%9C%AC/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="https://i.loli.net/2019/01/13/5c3aec85a4343.jpg" alt="旅途中的生活">
-                
-                <h1>旅途中的生活</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2019年04月24日</a>
-            <a><i class="nexmoefont icon-areachart"></i>2,440 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 13 分钟</a>
-            
-                <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a>
-            
-        </div>
-        <article>
-            
-            <h1 id="基于scrapy爬取ssr链接"><a href="#基于scrapy爬取ssr链接" class="headerlink" title="基于scrapy爬取ssr链接"></a>基于scrapy爬取ssr链接</h1><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>python3.5</p>
-<h2 id="虚拟环境virtualenv"><a href="#虚拟环境virtualenv" class="headerlink" title="虚拟环境virtualenv"></a>虚拟环境virtualenv</h2><p>pip install virtualenv        提示pip版本太低<br>python -m pip install –upgrade pip<br>pip  install  -i  <a href="https://pypi.doubanio.com/simple/" target="_blank" rel="noopener">https://pypi.doubanio.com/simple/</a>  –trusted-host pypi.doubanio.com  django    使用豆瓣源加速<br>pip uninstall django    卸载django<br>virtualenv scrapytest   默认环境创建虚拟环境<br>cd scrapytest/Scripts &amp;&amp;  activate.bat &amp;&amp; python 进入3.5虚拟环境<br>virtualenv -p D:\Python27\python.exe scrapytest<br>cd scrapytest/Scripts &amp;&amp;  activate.bat &amp;&amp; python 进入2.7虚拟环境<br>deactivate.bat          退出虚拟环境</p>
-<p>apt-get install python-virtualenv       安装虚拟环境<br>virtualenv py2 &amp;&amp; cd py2 &amp;&amp; cd bin &amp;&amp; source activate &amp;&amp; python 进入2.7虚拟环境<br>virtualenv -p /usr/bin/python3 py3 &amp;&amp; &amp;&amp; cd py3 &amp;&amp; cd bin &amp;&amp; source activate &amp;&amp; python  进入3.5虚拟环境<br>虚拟环境virtualenvwrapper<br>pip install virtualenvwrapper<br>pip install virtualenvwrapper-win    解决workon不是内部指令<br>workon  列出所有虚拟环境<br>新建环境变量   WORKON_HOME=E:\envs<br>mkvirtualenv py3scrapy  新建并进入虚拟环境<br>deactivate          退出虚拟环境<br>workon py3scrapy        进入指定虚拟环境<br>    pip install -i <a href="https://pypi.douban.com/simple" target="_blank" rel="noopener">https://pypi.douban.com/simple</a> scrapy    安装scrapy源<br>    若缺少lxml出错<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/寻找对应版本的lxml的whl源" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/寻找对应版本的lxml的whl源</a><br>    python -m pip install –upgrade pip     更新pip<br>    pip install lxml-4.1.1-cp35-cp35m-win_amd64.whl<br>    若缺少Twisted出错<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml搜对应版本Twisted" target="_blank" rel="noopener">http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml搜对应版本Twisted</a><br>    pip install Twisted‑17.9.0‑cp35‑cp35m‑win_amd64.whl<br>mkvirtualenv –python=D:\Python27\python.exe py2scrapy      一般不会出问题<br>    pip install -i <a href="https://pypi.douban.com/simple" target="_blank" rel="noopener">https://pypi.douban.com/simple</a> scrapy</p>
-<p>pip install virtualenvwrapper<br>    find / -name virualenvwrapper.sh<br>    vim <del>/.bashrc<br>        export WORKON_HOME=$HOME/.virtualenvs<br>        source /home/wj/.local/bin/virtualenvwrapper.sh<br>    source ~/.bashrc<br>mkvirtualenv py2scrapy          指向生成</del>/.virtualenv<br>deactivate          退出虚拟环境<br>mkdirtualenv –python=/usr/bin/python3 py3scrapy<br>项目实战<br>项目搭建<br>pip install virtualenvwrapper-win<br>mkvirtualenv –python=F:\Python\Python35\python.exe ssr<br>pip install Twisted-17.9.0-cp35-cp35m-win_amd64.whl<br>pip install -i <a href="https://pypi.douban.com/simple/" target="_blank" rel="noopener">https://pypi.douban.com/simple/</a> scrapy<br>scrapy startproject ssr<br>cd ssr<br>scrapy genspider ssr <a href="https://freevpn-ss.tk/category/technology/" target="_blank" rel="noopener">https://freevpn-ss.tk/category/technology/</a><br>scrapy genspider –list<br>scrapy genspider -t crawl lagou <a href="http://www.lagou.com" target="_blank" rel="noopener">www.lagou.com</a>  使用crawl模板</p>
-<p>pycharm–新建项目—Pure Python—Interpreter为E:\envs\ssr\Scripts\python.exe<br>pycharm–打开—ssr,修改settings–project Interpreter为D:\Envs\ss<br>enter description here</p>
-<p>pip list<br>pip install -i <a href="https://pypi.douban.com/simple" target="_blank" rel="noopener">https://pypi.douban.com/simple</a> pypiwin32 pillow requests redis fake-useragent<br>pip install mysqlclient-1.4.4-cp35-cp35m-win_amd64.whl</p>
-<p>或者pip install -i <a href="https://pypi.douban.com/simple" target="_blank" rel="noopener">https://pypi.douban.com/simple</a> mysqlclient<br>出错apt-get install libmysqlclient-dev<br>或者yum install python-devel mysql-devel<br>scrapy crawl jobbole<br>修改settings.py     ROBOTSTXT_OBEY = False<br>scrapy shell <a href="http://blog.jobbole.com/" target="_blank" rel="noopener">http://blog.jobbole.com/</a>       可以在脚本中调试xpath或者chrome浏览器右键copy xpath,chrome浏览器右键copy selector<br>scrapy shell -s USER_AGENT=”Mozilla/5.0 (Windows NT 6.1; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0” <a href="https://www.zhihu.com/question/56320032" target="_blank" rel="noopener">https://www.zhihu.com/question/56320032</a><br>pip freeze &gt; requirements.txt 生成依赖到文件<br>pip install -r requirements.txt 一键安装依赖<br>job_list = json.loads(response.text)[“data”][“results返回response<br>爬虫开发1<br>scrapy shell <a href="https://freevpn-ss.tk/category/technology/" target="_blank" rel="noopener">https://freevpn-ss.tk/category/technology/</a>  shell中查看节点<br>response.css(“.posts-list .panel a::attr(href)”).extract_first()<br>response.css(“.posts-list .panel a img::attr(src)”).extract_first()<br>response.xpath(“//*[@id=’container’]/div/ul/li/article/a/img/@src”).extract_first()<br>view(response)</p>
-<p>启动类main.py</p>
-<p>from scrapy.cmdline import execute</p>
-<p>import sys<br>import os</p>
-<p>sys.path.append(os.path.dirname(os.path.abspath(<strong>file</strong>)))<br>execute([“scrapy”, “crawl”, “freevpn-ss.tk”])<br>基础配置ssr/settings.py</p>
-<p>import os<br>BOT_NAME = ‘ssr’</p>
-<p>SPIDER_MODULES = [‘ssr.spiders’]<br>NEWSPIDER_MODULE = ‘ssr.spiders’</p>
-<h1 id="Crawl-responsibly-by-identifying-yourself-and-your-website-on-the-user-agent"><a href="#Crawl-responsibly-by-identifying-yourself-and-your-website-on-the-user-agent" class="headerlink" title="Crawl responsibly by identifying yourself (and your website) on the user-agent"></a>Crawl responsibly by identifying yourself (and your website) on the user-agent</h1><p>#USER_AGENT = ‘ssr (+<a href="http://www.yourdomain.com)&#39;" target="_blank" rel="noopener">http://www.yourdomain.com)&#39;</a></p>
-<h1 id="Obey-robots-txt-rules"><a href="#Obey-robots-txt-rules" class="headerlink" title="Obey robots.txt rules"></a>Obey robots.txt rules</h1><p>ROBOTSTXT_OBEY = False</p>
-<p>import sys<br>BASE_DIR = os.path.dirname(os.path.abspath(os.path.dirname(<strong>file</strong>)))<br>sys.path.insert(0, os.path.join(BASE_DIR, ‘ssr’))</p>
-<p>MYSQL_HOST = “127.0.0.1”<br>MYSQL_DBNAME = “scrapy”<br>MYSQL_USER = “root”<br>MYSQL_PASSWORD = “”</p>
-<p>ITEM_PIPELINES = {<br>    ‘ssr.pipelines.MysqlTwistedPipline’: 2,#连接池异步插入<br>    ‘ssr.pipelines.JsonExporterPipleline’: 1,#连接池异步插入<br>}<br>ssr/pipelines.py</p>
-<p>from scrapy.exporters import JsonItemExporter<br>from scrapy.pipelines.images import ImagesPipeline<br>import codecs<br>import json<br>import MySQLdb<br>import MySQLdb.cursors<br>from twisted.enterprise import adbapi</p>
-<p>from ssr.utils.common import DateEncoder</p>
-<p>class SsrPipeline(object):<br>    def process_item(self, item, spider):<br>        return item</p>
-<p>class SsrImagePipeline(ImagesPipeline):<br>    def item_completed(self, results, item, info):<br>        if “front_image_url” in item:<br>            for ok, value in results:<br>                image_file_path = value[“path”]<br>            # 填充自定义路径<br>            item[“front_image_path”] = image_file_path</p>
-<pre><code>    return item</code></pre><p>class JsonWithEncodingPipeline(object):</p>
-<pre><code># 自定义json文件的导出
-def __init__(self):
-    self.file = codecs.open(&#39;article.json&#39;, &#39;w&#39;, encoding=&quot;utf-8&quot;)
-
-def process_item(self, item, spider):
-    # 序列化，ensure_ascii利于中文,json没法序列化date格式，需要新写函数
-    lines = json.dumps(dict(item), ensure_ascii=False, cls=DateEncoder) + &quot;\n&quot;
-    self.file.write(lines)
-    return item
-
-def spider_closed(self, spider):
-    self.file.close()</code></pre><p>class JsonExporterPipleline(object):<br>    # 调用scrapy提供的json export导出json文件<br>    def <strong>init</strong>(self):<br>        self.file = open(‘ssr.json’, ‘wb’)<br>        self.exporter = JsonItemExporter(self.file, encoding=”utf-8”, ensure_ascii=False)<br>        self.exporter.start_exporting()</p>
-<pre><code>def close_spider(self, spider):
-    self.exporter.finish_exporting()
-    self.file.close()
-
-def process_item(self, item, spider):
-    self.exporter.export_item(item)
-    return item</code></pre><p>class MysqlPipeline(object):<br>    # 采用同步的机制写入mysql<br>    def <strong>init</strong>(self):<br>        self.conn = MySQLdb.connect(‘127.0.0.1’, ‘root’, ‘123456’, ‘scrapy’, charset=”utf8”, use_unicode=True)<br>        self.cursor = self.conn.cursor()</p>
-<pre><code>def process_item(self, item, spider):
-    insert_sql = &quot;&quot;&quot;
-        insert into ssr(url, ip,ssr, port,password,secret)
-        VALUES (%s, %s, %s, %s, %s)
-    &quot;&quot;&quot;
-    self.cursor.execute(insert_sql, (item[&quot;url&quot;],item[&quot;ssr&quot;], item[&quot;ip&quot;], item[&quot;port&quot;], item[&quot;password&quot;], item[&quot;secret&quot;]))
-    self.conn.commit()</code></pre><p>class MysqlTwistedPipline(object):<br>    # 异步连接池插入数据库，不会阻塞<br>    def <strong>init</strong>(self, dbpool):<br>        self.dbpool = dbpool</p>
-<pre><code>@classmethod
-def from_settings(cls, settings):# 初始化时即被调用静态方法
-    dbparms = dict(
-        host = settings[&quot;MYSQL_HOST&quot;],#setttings中定义
-        db = settings[&quot;MYSQL_DBNAME&quot;],
-        user = settings[&quot;MYSQL_USER&quot;],
-        passwd = settings[&quot;MYSQL_PASSWORD&quot;],
-        charset=&#39;utf8&#39;,
-        cursorclass=MySQLdb.cursors.DictCursor,
-        use_unicode=True,
-    )
-    dbpool = adbapi.ConnectionPool(&quot;MySQLdb&quot;, **dbparms)
-
-    return cls(dbpool)
-
-def process_item(self, item, spider):
-    #使用twisted将mysql插入变成异步执行
-    query = self.dbpool.runInteraction(self.do_insert, item)
-    query.addErrback(self.handle_error, item, spider) #处理异常
-
-def handle_error(self, failure, item, spider):
-    #处理异步插入的异常
-    print (failure)
-
-def do_insert(self, cursor, item):
-    #执行具体的插入，不具体的如MysqlPipeline.process_item()
-    #根据不同的item 构建不同的sql语句并插入到mysql中
-    insert_sql, params = item.get_insert_sql()
-    cursor.execute(insert_sql, params)</code></pre><p>实体类ssr/items.py</p>
-<p>import scrapy<br>from scrapy.loader import ItemLoader<br>from scrapy.loader.processors import MapCompose, TakeFirst, Join<br>import re<br>import datetime<br>from w3lib.html import remove_tags</p>
-<p>def date_convert(value):</p>
-<pre><code>try:
-    create_date = datetime.datetime.strptime(value, &quot;%Y/%m/%d&quot;).date()
-except Exception as e:
-    create_date = datetime.datetime.now().date()
-
-return create_date</code></pre><p>def get_nums(value):<br>    match_re = re.match(“.<em>?(\d+).</em>“, value)<br>    if match_re:<br>        nums = int(match_re.group(1))<br>    else:<br>        nums = 0<br>    return nums</p>
-<p>def return_value(value):<br>    return value</p>
-<p>class SsrItemLoader(ItemLoader):<br>    # 自定义itemloader<br>    default_output_processor = TakeFirst()</p>
-<p>class SsrItem(scrapy.Item):<br>    url = scrapy.Field()<br>    ip = scrapy.Field(<br>        input_processor=MapCompose(return_value),#传递进来可以预处理<br>    )<br>    port = scrapy.Field()<br>    ssr = scrapy.Field()<br>    front_image_url = scrapy.Field()<br>    password = scrapy.Field()<br>    secret = scrapy.Field()</p>
-<pre><code>def get_insert_sql(self):
-    insert_sql = &quot;&quot;&quot;
-        insert into ssr(url,ssr, ip, port, password,secret)
-        VALUES (%s, %s,%s, %s, %s,%s) 
-        ON DUPLICATE KEY UPDATE ssr=VALUES(ssr)
-    &quot;&quot;&quot;
-    params = (self[&quot;url&quot;],self[&quot;ssr&quot;], self[&quot;ip&quot;],self[&quot;port&quot;], self[&quot;password&quot;],self[&quot;secret&quot;])
-
-    return insert_sql, params</code></pre><p>核心代码ssr/spiders/freevpn_ss_tk.py</p>
-<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><p>import time<br>from datetime import datetime<br>from urllib import parse</p>
-<p>import scrapy<br>from scrapy.http import Request</p>
-<p>from ssr.items import SsrItemLoader, SsrItem</p>
-<p>class FreevpnSsTkSpider(scrapy.Spider):<br>    name = ‘freevpn-ss.tk’<br>    # 必须一级域名<br>    allowed_domains = [‘freevpn-ss.tk’]<br>    start_urls = [‘<a href="https://freevpn-ss.tk/category/technology/&#39;]" target="_blank" rel="noopener">https://freevpn-ss.tk/category/technology/&#39;]</a></p>
-<pre><code>custom_settings = {  # 优先并覆盖项目，避免被重定向
-    &quot;COOKIES_ENABLED&quot;: False,  # 关闭cookies
-    &quot;DOWNLOAD_DELAY&quot;: 1,
-    &#39;DEFAULT_REQUEST_HEADERS&#39;: {
-        &#39;Accept&#39;: &#39;application/json, text/javascript, */*; q=0.01&#39;,
-        &#39;Accept-Encoding&#39;: &#39;gzip, deflate, br&#39;,
-        &#39;Accept-Language&#39;: &#39;zh-CN,zh;q=0.8&#39;,
-        &#39;Connection&#39;: &#39;keep-alive&#39;,
-        &#39;Cookie&#39;: &#39;&#39;,
-        &#39;Host&#39;: &#39;freevpn-ss.tk&#39;,
-        &#39;Origin&#39;: &#39;https://freevpn-ss.tk/&#39;,
-        &#39;Referer&#39;: &#39;https://freevpn-ss.tk/&#39;,
-        &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36&#39;,
-    }
-}
-
-def parse(self, response):
-    # post_nodes = response.css(&quot;.posts-list .panel&gt;a&quot;)
-    # for post_node in post_nodes:
-    #     image_url = post_node.css(&quot;img::attr(src)&quot;).extract_first(&quot;&quot;)
-    #     post_url = post_node.css(&quot;::attr(href)&quot;).extract_first(&quot;&quot;)
-    #     yield Request(url=parse.urljoin(response.url, post_url), meta={&quot;front_image_url&quot;: image_url},callback=self.parse_detail)  # response获取meta
-    #
-    # next_url = response.css(&quot;.next-page a::attr(href)&quot;).extract_first(&quot;&quot;)
-    # if next_url:
-    #     print(next_url)
-    #     yield Request(url=parse.urljoin(response.url, next_url), callback=self.parse)
-    post_node = response.css(&quot;.posts-list .panel&gt;a&quot;)[0]
-    image_url = post_node.css(&quot;img::attr(src)&quot;).extract_first(&quot;&quot;)
-    post_url = post_node.css(&quot;::attr(href)&quot;).extract_first(&quot;&quot;)
-    yield Request(url=parse.urljoin(response.url, post_url), meta={&quot;front_image_url&quot;: image_url},
-                  callback=self.parse_detail)  # response获取meta
-
-def parse_detail(self, response):
-    # 通过item loader加载item
-    front_image_url = response.meta.get(&quot;front_image_url&quot;, &quot;&quot;)  # 文章封面图
-    ssr_nodes = response.css(&quot;table tbody tr&quot;)
-
-    with open(datetime.now().strftime(&#39;%Y-%m-%d&#39;), &#39;a&#39;) as file_object:
-        for ssr in ssr_nodes:
-            item_loader = SsrItemLoader(item=SsrItem(), response=response)  # 默认ItemLoader是一个list，自定义TakeFirst()
-            print(ssr.xpath(&quot;td[4]/text()&quot;).extract_first(&quot;&quot;))
-            item_loader.add_value(&quot;url&quot;, response.url)
-            item_loader.add_value(&quot;ssr&quot;, ssr.css(&quot;td:nth-child(1)&gt;a::attr(href)&quot;).extract_first(&quot;&quot;))
-            item_loader.add_value(&quot;ip&quot;, ssr.css(&quot;td:nth-child(2)::text&quot;).extract_first(&quot;&quot;))
-            item_loader.add_value(&quot;front_image_url&quot;, front_image_url)
-            item_loader.add_value(&quot;port&quot;, ssr.xpath(&quot;td[3]/text()&quot;).extract_first(&quot;&quot;))
-            item_loader.add_value(&quot;password&quot;, ssr.xpath(&quot;td[4]/text()&quot;).extract_first(&quot;&quot;))
-            item_loader.add_value(&quot;secret&quot;, ssr.xpath(&quot;td[5]/text()&quot;).extract_first(&quot;&quot;))
-            ssr_item = item_loader.load_item()
-            file_object.write(ssr.css(&quot;td:nth-child(1)&gt;a::attr(href)&quot;).extract_first(&quot;&quot;)+&quot;\n&quot;)
-            yield ssr_item  # 将传到piplines中</code></pre><p>爬虫开发2</p>
-<h1 id="coding-utf-8-1"><a href="#coding-utf-8-1" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><p>import time<br>from datetime import datetime<br>from urllib import parse</p>
-<p>import scrapy<br>from scrapy.http import Request</p>
-<p>from ssr.items import SsrItemLoader, SsrItem</p>
-<p>class FanQiangSpider(scrapy.Spider):<br>    name = ‘fanqiang.network’<br>    # 必须一级域名<br>    allowed_domains = [‘fanqiang.network’]<br>    start_urls = [‘<a href="https://fanqiang.network/免费ssr&#39;]" target="_blank" rel="noopener">https://fanqiang.network/免费ssr&#39;]</a></p>
-<pre><code>def parse(self, response):
-    post_nodes = response.css(&quot;.post-content table tbody tr&quot;)
-    item_loader = SsrItemLoader(item=SsrItem(), response=response)
-    with open(datetime.now().strftime(&#39;%Y-%m-%d&#39;), &#39;a&#39;) as file_object:
-        for post_node in post_nodes:
-            item_loader.add_value(&quot;url&quot;, response.url)
-            item_loader.add_value(&quot;ssr&quot;, post_node.css(&quot;td:nth-child(1)&gt;a::attr(href)&quot;).extract_first(&quot;&quot;).replace(&quot;http://freevpn-ss.tk/&quot;, &quot;&quot;))
-            item_loader.add_value(&quot;ip&quot;, post_node.css(&quot;td:nth-child(2)::text&quot;).extract_first(&quot;&quot;))
-            item_loader.add_value(&quot;port&quot;, post_node.xpath(&quot;td[3]/text()&quot;).extract_first(&quot;&quot;))
-            item_loader.add_value(&quot;password&quot;, post_node.xpath(&quot;td[4]/text()&quot;).extract_first(&quot;&quot;))
-            item_loader.add_value(&quot;secret&quot;, post_node.xpath(&quot;td[5]/text()&quot;).extract_first(&quot;&quot;))
-            ssr_item = item_loader.load_item()
-            file_object.write(post_node.css(&quot;td:nth-child(1)&gt;a::attr(href)&quot;).extract_first(&quot;&quot;).replace(&quot;http://freevpn-ss.tk/&quot;, &quot;&quot;) + &quot;\n&quot;)
-            yield ssr_item  # 将传到piplines中</code></pre><p>多爬虫同时运行<br>settings.py</p>
-<p>COMMANDS_MODULE = ‘ssr’<br>ssr/crawlall.py</p>
-<p>from scrapy.commands import ScrapyCommand</p>
-<p>class Command(ScrapyCommand):<br>    requires_project = True</p>
-<pre><code>def syntax(self):
-    return &#39;[options]&#39;
-
-def short_desc(self):
-    return &#39;Runs all of the spiders&#39;
-
-def run(self, args, opts):
-    spider_list = self.crawler_process.spiders.list()
-    for name in spider_list:
-        self.crawler_process.crawl(name, **opts.__dict__)
-    self.crawler_process.start()</code></pre><p>main.py</p>
-<p>from scrapy import cmdline<br>from scrapy.cmdline import execute</p>
-<p>import sys<br>import os</p>
-<p>sys.path.append(os.path.dirname(os.path.abspath(<strong>file</strong>)))</p>
-<h1 id="execute-“scrapy”-“crawl”-“freevpn-ss-tk”"><a href="#execute-“scrapy”-“crawl”-“freevpn-ss-tk”" class="headerlink" title="execute([“scrapy”, “crawl”, “freevpn-ss.tk”])"></a>execute([“scrapy”, “crawl”, “freevpn-ss.tk”])</h1><h1 id="execute-“scrapy”-“crawl”-“fanqiang-network”"><a href="#execute-“scrapy”-“crawl”-“fanqiang-network”" class="headerlink" title="execute([“scrapy”, “crawl”, “fanqiang.network”])"></a>execute([“scrapy”, “crawl”, “fanqiang.network”])</h1><p>cmdline.execute(“scrapy crawlall”.split())<br>防反爬<br>随机ua<br>pip install -i <a href="https://pypi.doubanio.com/simple/" target="_blank" rel="noopener">https://pypi.doubanio.com/simple/</a> –trusted-host pypi.doubanio.com scrapy-fake-useragent</p>
-<p>DOWNLOADER_MIDDLEWARES = {<br>    ‘scrapy_fake_useragent.middleware.RandomUserAgentMiddleware’: 1,<br>}<br>报错socket.timeout: timed out，查看F:/Anaconda3/Lib/site-packages/fake_useragent/settings.py</p>
-<p><strong>version</strong> = ‘0.1.11’</p>
-<p>DB = os.path.join(<br>    tempfile.gettempdir(),<br>    ‘fake_useragent_{version}.json’.format(<br>        version=<strong>version</strong>,<br>    ),<br>)</p>
-<p>CACHE_SERVER = ‘<a href="https://fake-useragent.herokuapp.com/browsers/{version}&#39;.format" target="_blank" rel="noopener">https://fake-useragent.herokuapp.com/browsers/{version}&#39;.format</a>(<br>    version=<strong>version</strong>,<br>)</p>
-<p>BROWSERS_STATS_PAGE = ‘<a href="https://www.w3schools.com/browsers/default.asp&#39;" target="_blank" rel="noopener">https://www.w3schools.com/browsers/default.asp&#39;</a></p>
-<p>BROWSER_BASE_PAGE = ‘<a href="http://useragentstring.com/pages/useragentstring.php?name={browser}&#39;" target="_blank" rel="noopener">http://useragentstring.com/pages/useragentstring.php?name={browser}&#39;</a>  # noqa</p>
-<p>BROWSERS_COUNT_LIMIT = 50</p>
-<p>REPLACEMENTS = {<br>    ‘ ‘: ‘’,<br>    ‘_’: ‘’,<br>}</p>
-<p>SHORTCUTS = {<br>    ‘internet explorer’: ‘internetexplorer’,<br>    ‘ie’: ‘internetexplorer’,<br>    ‘msie’: ‘internetexplorer’,<br>    ‘edge’: ‘internetexplorer’,<br>    ‘google’: ‘chrome’,<br>    ‘googlechrome’: ‘chrome’,<br>    ‘ff’: ‘firefox’,<br>}</p>
-<p>OVERRIDES = {<br>    ‘Edge/IE’: ‘Internet Explorer’,<br>    ‘IE/Edge’: ‘Internet Explorer’,<br>}</p>
-<p>HTTP_TIMEOUT = 5</p>
-<p>HTTP_RETRIES = 2</p>
-<p>HTTP_DELAY = 0.1<br><a href="http://useragentstring.com/pages/useragentstring.php?name=Chrome" target="_blank" rel="noopener">http://useragentstring.com/pages/useragentstring.php?name=Chrome</a> 打开超时报错，其中CACHE_SERVER是存储了所有UserAgent的json数据，再次观察其中DB这个变量，结合fake_useragent\fake.py中的逻辑，判断这个变量应该是存储json数据的，所以大体逻辑应该是，首次初始化时，会自动爬取CACHE_SERVER中的json数据，然后将其存储到本地，所以我们直接将json存到指定路径下，再次初始化时，应该就不会报错</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import tempfile<br>print(tempfile.gettempdir())<br>C:\Users\codewj\AppData\Local\Temp<br>将CACHE_SERVER的json数据保存为fake_useragent_0.1.11.json,并放到目录C:\Users\codewj\AppData\Local\Temp中</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import fake_useragent<br>ua = fake_useragent.UserAgent()<br>ua.data_browsers[‘chrome’][0]<br>‘Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36’<br>注：如果CACHE_SERVER不是<a href="https://fake-useragent.herokuapp.com/browsers/0.1.11，请更新一下库pip" target="_blank" rel="noopener">https://fake-useragent.herokuapp.com/browsers/0.1.11，请更新一下库pip</a> install –upgrade fake_useragent</p>
-</blockquote>
-</blockquote>
-</blockquote>
-
-            
-        </article>
-    </div>
     
     <div class="nexmoe-post">
         <a href="/2019/04/24/life/">
@@ -439,7 +195,7 @@ def run(self, args, opts):
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1578644295997"></script>
+<script src="/js/app.js?v=1578644446351"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
