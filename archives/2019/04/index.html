@@ -31,7 +31,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1578643683257">
+  <link rel="stylesheet" href="/css/style.css?v=1578644189246">
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="亦初丨星空灬" type="application/atom+xml">
 </head>
 
@@ -173,8 +173,8 @@
         </div>
         <article>
             
-            <h3 id="基于scrapy爬取ssr链接"><a href="#基于scrapy爬取ssr链接" class="headerlink" title="基于scrapy爬取ssr链接"></a>基于scrapy爬取ssr链接</h3><p>环境搭建<br>python3.5</p>
-<p>虚拟环境virtualenv<br>pip install virtualenv        提示pip版本太低<br>python -m pip install –upgrade pip<br>pip  install  -i  <a href="https://pypi.doubanio.com/simple/" target="_blank" rel="noopener">https://pypi.doubanio.com/simple/</a>  –trusted-host pypi.doubanio.com  django    使用豆瓣源加速<br>pip uninstall django    卸载django<br>virtualenv scrapytest   默认环境创建虚拟环境<br>cd scrapytest/Scripts &amp;&amp;  activate.bat &amp;&amp; python 进入3.5虚拟环境<br>virtualenv -p D:\Python27\python.exe scrapytest<br>cd scrapytest/Scripts &amp;&amp;  activate.bat &amp;&amp; python 进入2.7虚拟环境<br>deactivate.bat          退出虚拟环境</p>
+            <h1 id="基于scrapy爬取ssr链接"><a href="#基于scrapy爬取ssr链接" class="headerlink" title="基于scrapy爬取ssr链接"></a>基于scrapy爬取ssr链接</h1><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>python3.5</p>
+<h2 id="虚拟环境virtualenv"><a href="#虚拟环境virtualenv" class="headerlink" title="虚拟环境virtualenv"></a>虚拟环境virtualenv</h2><p>pip install virtualenv        提示pip版本太低<br>python -m pip install –upgrade pip<br>pip  install  -i  <a href="https://pypi.doubanio.com/simple/" target="_blank" rel="noopener">https://pypi.doubanio.com/simple/</a>  –trusted-host pypi.doubanio.com  django    使用豆瓣源加速<br>pip uninstall django    卸载django<br>virtualenv scrapytest   默认环境创建虚拟环境<br>cd scrapytest/Scripts &amp;&amp;  activate.bat &amp;&amp; python 进入3.5虚拟环境<br>virtualenv -p D:\Python27\python.exe scrapytest<br>cd scrapytest/Scripts &amp;&amp;  activate.bat &amp;&amp; python 进入2.7虚拟环境<br>deactivate.bat          退出虚拟环境</p>
 <p>apt-get install python-virtualenv       安装虚拟环境<br>virtualenv py2 &amp;&amp; cd py2 &amp;&amp; cd bin &amp;&amp; source activate &amp;&amp; python 进入2.7虚拟环境<br>virtualenv -p /usr/bin/python3 py3 &amp;&amp; &amp;&amp; cd py3 &amp;&amp; cd bin &amp;&amp; source activate &amp;&amp; python  进入3.5虚拟环境<br>虚拟环境virtualenvwrapper<br>pip install virtualenvwrapper<br>pip install virtualenvwrapper-win    解决workon不是内部指令<br>workon  列出所有虚拟环境<br>新建环境变量   WORKON_HOME=E:\envs<br>mkvirtualenv py3scrapy  新建并进入虚拟环境<br>deactivate          退出虚拟环境<br>workon py3scrapy        进入指定虚拟环境<br>    pip install -i <a href="https://pypi.douban.com/simple" target="_blank" rel="noopener">https://pypi.douban.com/simple</a> scrapy    安装scrapy源<br>    若缺少lxml出错<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/寻找对应版本的lxml的whl源" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/寻找对应版本的lxml的whl源</a><br>    python -m pip install –upgrade pip     更新pip<br>    pip install lxml-4.1.1-cp35-cp35m-win_amd64.whl<br>    若缺少Twisted出错<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml搜对应版本Twisted" target="_blank" rel="noopener">http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml搜对应版本Twisted</a><br>    pip install Twisted‑17.9.0‑cp35‑cp35m‑win_amd64.whl<br>mkvirtualenv –python=D:\Python27\python.exe py2scrapy      一般不会出问题<br>    pip install -i <a href="https://pypi.douban.com/simple" target="_blank" rel="noopener">https://pypi.douban.com/simple</a> scrapy</p>
 <p>pip install virtualenvwrapper<br>    find / -name virualenvwrapper.sh<br>    vim <del>/.bashrc<br>        export WORKON_HOME=$HOME/.virtualenvs<br>        source /home/wj/.local/bin/virtualenvwrapper.sh<br>    source ~/.bashrc<br>mkvirtualenv py2scrapy          指向生成</del>/.virtualenv<br>deactivate          退出虚拟环境<br>mkdirtualenv –python=/usr/bin/python3 py3scrapy<br>项目实战<br>项目搭建<br>pip install virtualenvwrapper-win<br>mkvirtualenv –python=F:\Python\Python35\python.exe ssr<br>pip install Twisted-17.9.0-cp35-cp35m-win_amd64.whl<br>pip install -i <a href="https://pypi.douban.com/simple/" target="_blank" rel="noopener">https://pypi.douban.com/simple/</a> scrapy<br>scrapy startproject ssr<br>cd ssr<br>scrapy genspider ssr <a href="https://freevpn-ss.tk/category/technology/" target="_blank" rel="noopener">https://freevpn-ss.tk/category/technology/</a><br>scrapy genspider –list<br>scrapy genspider -t crawl lagou <a href="http://www.lagou.com" target="_blank" rel="noopener">www.lagou.com</a>  使用crawl模板</p>
 <p>pycharm–新建项目—Pure Python—Interpreter为E:\envs\ssr\Scripts\python.exe<br>pycharm–打开—ssr,修改settings–project Interpreter为D:\Envs\ss<br>enter description here</p>
@@ -439,7 +439,7 @@ def run(self, args, opts):
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1578643683261"></script>
+<script src="/js/app.js?v=1578644189250"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
