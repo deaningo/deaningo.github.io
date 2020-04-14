@@ -3,8 +3,9 @@
   <entry>
     <title>NoSQL 简介</title>
     <url>/2019/07/14/nosql/</url>
-    <content><![CDATA[<h2 id="NoSQL-简介"><a href="#NoSQL-简介" class="headerlink" title="NoSQL 简介"></a>NoSQL 简介</h2><p>NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p>
-<p>在现代的计算系统上每天网络上都会产生庞大的数据量。</p>
+    <content><![CDATA[<p>NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p>
+<a id="more"></a>
+<h2 id="NoSQL-简介"><a href="#NoSQL-简介" class="headerlink" title="NoSQL 简介"></a>NoSQL 简介</h2><p>在现代的计算系统上每天网络上都会产生庞大的数据量。</p>
 <p>这些数据有很大一部分是由关系数据库管理系统（RDBMS）来处理。 1970年 E.F.Codd’s提出的关系模型的论文 “A relational model of data for large shared data banks”，这使得数据建模和应用程序编程更加简单。</p>
 <p>通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。</p>
 <p>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p>
