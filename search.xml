@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>NoSQL 简介</title>
-    <url>/2019/07/14/nosql/</url>
+    <url>/2017/06/14/nosql/</url>
     <content><![CDATA[<p>NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p>
 <a id="more"></a>
 <h2 id="NoSQL-简介"><a href="#NoSQL-简介" class="headerlink" title="NoSQL 简介"></a>NoSQL 简介</h2><p>在现代的计算系统上每天网络上都会产生庞大的数据量。</p>
@@ -24,5 +24,39 @@
       <categories>
         <category>NoSQL</category>
       </categories>
+      <tags>
+        <tag>NoSQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PHP date() 日期函数</title>
+    <url>/2016/07/14/php_date/</url>
+    <content><![CDATA[<p>PHP date() 日期函数的基本使用和用法案例。</p>
+<a id="more"></a>
+<h1 id="PHP-date-日期函数"><a href="#PHP-date-日期函数" class="headerlink" title="PHP date() 日期函数"></a>PHP date() 日期函数</h1><p>PHP date() 函数</p>
+<p>PHP date() 函数用于格式化时间/日期。</p>
+<h1 id="PHP-date-函数"><a href="#PHP-date-函数" class="headerlink" title="PHP date() 函数"></a>PHP date() 函数</h1><p>PHP date() 函数可把时间戳格式化为可读性更好的日期和时间。</p>
+<p>时间戳是一个字符序列，表示一定的事件发生的日期/时间。</p>
+<p>PHP Date() - 格式化日期</p>
+<p>date() 函数的第一个必需参数 format 规定了如何格式化日期/时间。</p>
+<p>这里列出了一些可用的字符：</p>
+<p>d - 代表月中的天 (01 - 31)</p>
+<p>m - 代表月 (01 - 12)</p>
+<p>Y - 代表年 (四位数)</p>
+<p>如需了解 format 参数中可用的所有字符列表，请查阅我们的 PHP Date 参考手册，date() 函数。</p>
+<p>可以在字母之间插入其他字符，比如 “/“、”.” 或者 “-“，这样就可以增加附加格式了：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br&gt;&quot;;</span><br><span class="line">echo date(&quot;Y.m.d&quot;) . &quot;&lt;br&gt;&quot;;</span><br><span class="line">echo date(&quot;Y-m-d&quot;);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>格式字串可以识别以下 format 参数的字符串</p>
+<p><img src="https://img.php.cn/upload/image/198/160/267/1475994567325219.png" alt="avatar"></p>
+<p>例子</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &quot;date()函数输出格式化日期:&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">&#x2F;&#x2F; 常用</span><br><span class="line">echo date(&quot;l&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 注意是字符L的小写，不是1，也不是竖线</span><br><span class="line">echo date(&quot;Y-m-d H:i:s&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y年m月d日 H时i分s秒&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">&#x2F;&#x2F; 从日期格式的字符串中获取日期2005-03-21</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;2005-03-21 11:15:38&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 days&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 昨天的日期</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 week&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个星期今天的日期</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 month&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个月今天的日期</span><br><span class="line">echo date(&quot;Y-m-d H&quot;,strtotime(&quot;next Thursday&quot;));&#x2F;&#x2F; 下个周四的日期和小</span><br><span class="line">echo date(&#39;Y-m-d&#39;,strtotime(&#39;2015-06-08 -2 days&#39;)); &#x2F;&#x2F; 某个日期的前n天</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>date</tag>
+        <tag>php</tag>
+      </tags>
   </entry>
 </search>

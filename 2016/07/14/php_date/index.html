@@ -25,22 +25,26 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.52581688.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"www.52581688.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="NoSQL(NoSQL &#x3D; Not Only SQL )，意即”不仅仅是SQL”。">
+  <meta name="description" content="PHP date() 日期函数的基本使用和用法案例。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NoSQL 简介">
-<meta property="og:url" content="http://www.52581688.xyz/2019/07/14/nosql/index.html">
+<meta property="og:title" content="PHP date() 日期函数">
+<meta property="og:url" content="http://www.52581688.xyz/2016/07/14/php_date/index.html">
 <meta property="og:site_name" content="亦初">
-<meta property="og:description" content="NoSQL(NoSQL &#x3D; Not Only SQL )，意即”不仅仅是SQL”。">
+<meta property="og:description" content="PHP date() 日期函数的基本使用和用法案例。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-07-14T09:01:34.000Z">
-<meta property="article:modified_time" content="2020-04-14T05:36:02.326Z">
+<meta property="og:image" content="https://img.php.cn/upload/image/198/160/267/1475994567325219.png">
+<meta property="article:published_time" content="2016-07-14T09:01:34.000Z">
+<meta property="article:modified_time" content="2020-04-16T02:11:26.893Z">
 <meta property="article:author" content="亦初">
+<meta property="article:tag" content="date">
+<meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.php.cn/upload/image/198/160/267/1475994567325219.png">
 
-<link rel="canonical" href="http://www.52581688.xyz/2019/07/14/nosql/">
+<link rel="canonical" href="http://www.52581688.xyz/2016/07/14/php_date/">
 
 
 <script id="page-configurations">
@@ -53,7 +57,7 @@
   };
 </script>
 
-  <title>NoSQL 简介 | 亦初</title>
+  <title>PHP date() 日期函数 | 亦初</title>
   
 
 
@@ -201,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.52581688.xyz/2019/07/14/nosql/">
+    <link itemprop="mainEntityOfPage" href="http://www.52581688.xyz/2016/07/14/php_date/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/15867697526861.png">
@@ -214,7 +218,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          NoSQL 简介
+          PHP date() 日期函数
         </h1>
 
         <div class="post-meta">
@@ -224,14 +228,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-07-14 17:01:34" itemprop="dateCreated datePublished" datetime="2019-07-14T17:01:34+08:00">2019-07-14</time>
+              <time title="创建时间：2016-07-14 17:01:34" itemprop="dateCreated datePublished" datetime="2016-07-14T17:01:34+08:00">2016-07-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-14 13:36:02" itemprop="dateModified" datetime="2020-04-14T13:36:02+08:00">2020-04-14</time>
+                <time title="修改时间：2020-04-16 10:11:26" itemprop="dateModified" datetime="2020-04-16T10:11:26+08:00">2020-04-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,7 +243,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NoSQL/" itemprop="url" rel="index"><span itemprop="name">NoSQL</span></a>
+                  <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
                 </span>
             </span>
 
@@ -249,7 +253,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -268,24 +272,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p>
+        <p>PHP date() 日期函数的基本使用和用法案例。</p>
 <a id="more"></a>
-<h2 id="NoSQL-简介"><a href="#NoSQL-简介" class="headerlink" title="NoSQL 简介"></a>NoSQL 简介</h2><p>在现代的计算系统上每天网络上都会产生庞大的数据量。</p>
-<p>这些数据有很大一部分是由关系数据库管理系统（RDBMS）来处理。 1970年 E.F.Codd’s提出的关系模型的论文 “A relational model of data for large shared data banks”，这使得数据建模和应用程序编程更加简单。</p>
-<p>通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。</p>
-<p>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p>
-<h2 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL?"></a>什么是NoSQL?</h2><p>NoSQL，指的是非关系型的数据库。NoSQL有时也称作Not Only SQL的缩写，是对不同于传统的关系型数据库的数据库管理系统的统称。</p>
-<p>NoSQL用于超大规模数据的存储。（例如谷歌或Facebook每天为他们的用户收集万亿比特的数据）。这些类型的数据存储不需要固定的模式，无需多余操作就可以横向扩展。</p>
-<h2 id="为什么使用NoSQL"><a href="#为什么使用NoSQL" class="headerlink" title="为什么使用NoSQL ?"></a>为什么使用NoSQL ?</h2><p>今天我们可以通过第三方平台（如：Google,Facebook等）可以很容易的访问和抓取数据。用户的个人信息，社交网络，地理位置，用户生成的数据和用户操作日志已经成倍的增加。我们如果要对这些用户数据进行挖掘，那SQL数据库已经不适合这些应用了, NoSQL 数据库的发展却能很好的处理这些大的数据。</p>
-<h2 id="关系型数据库遵循ACID规则"><a href="#关系型数据库遵循ACID规则" class="headerlink" title="关系型数据库遵循ACID规则"></a>关系型数据库遵循ACID规则</h2><p>事务在英文中是transaction，和现实世界中的交易很类似，它有如下四个特性：</p>
-<h3 id="1、A-Atomicity-原子性"><a href="#1、A-Atomicity-原子性" class="headerlink" title="1、A (Atomicity) 原子性"></a>1、A (Atomicity) 原子性</h3><p>原子性很容易理解，也就是说事务里的所有操作要么全部做完，要么都不做，事务成功的条件是事务里的所有操作都成功，只要有一个操作失败，整个事务就失败，需要回滚。</p>
-<p>比如银行转账，从A账户转100元至B账户，分为两个步骤：1）从A账户取100元；2）存入100元至B账户。这两步要么一起完成，要么一起不完成，如果只完成第一步，第二步失败，钱会莫名其妙少了100元。</p>
-<h3 id="2、C-Consistency-一致性"><a href="#2、C-Consistency-一致性" class="headerlink" title="2、C (Consistency) 一致性"></a>2、C (Consistency) 一致性</h3><p>一致性也比较容易理解，也就是说数据库要一直处于一致的状态，事务的运行不会改变数据库原本的一致性约束。</p>
-<p>例如现有完整性约束a+b=10，如果一个事务改变了a，那么必须得改变b，使得事务结束后依然满足a+b=10，否则事务失败。</p>
-<h3 id="3、I-Isolation-独立性"><a href="#3、I-Isolation-独立性" class="headerlink" title="3、I (Isolation) 独立性"></a>3、I (Isolation) 独立性</h3><p>所谓的独立性是指并发的事务之间不会互相影响，如果一个事务要访问的数据正在被另外一个事务修改，只要另外一个事务未提交，它所访问的数据就不受未提交事务的影响。</p>
-<p>比如现在有个交易是从A账户转100元至B账户，在这个交易还未完成的情况下，如果此时B查询自己的账户，是看不到新增加的100元的。</p>
-<h3 id="4、D-Durability-持久性"><a href="#4、D-Durability-持久性" class="headerlink" title="4、D (Durability) 持久性"></a>4、D (Durability) 持久性</h3><p>持久性是指一旦事务提交后，它所做的修改将会永久的保存在数据库上，即使出现宕机也不会丢失。</p>
+<h1 id="PHP-date-日期函数"><a href="#PHP-date-日期函数" class="headerlink" title="PHP date() 日期函数"></a>PHP date() 日期函数</h1><p>PHP date() 函数</p>
+<p>PHP date() 函数用于格式化时间/日期。</p>
+<h1 id="PHP-date-函数"><a href="#PHP-date-函数" class="headerlink" title="PHP date() 函数"></a>PHP date() 函数</h1><p>PHP date() 函数可把时间戳格式化为可读性更好的日期和时间。</p>
+<p>时间戳是一个字符序列，表示一定的事件发生的日期/时间。</p>
+<p>PHP Date() - 格式化日期</p>
+<p>date() 函数的第一个必需参数 format 规定了如何格式化日期/时间。</p>
+<p>这里列出了一些可用的字符：</p>
+<p>d - 代表月中的天 (01 - 31)</p>
+<p>m - 代表月 (01 - 12)</p>
+<p>Y - 代表年 (四位数)</p>
+<p>如需了解 format 参数中可用的所有字符列表，请查阅我们的 PHP Date 参考手册，date() 函数。</p>
+<p>可以在字母之间插入其他字符，比如 “/“、”.” 或者 “-“，这样就可以增加附加格式了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br&gt;&quot;;</span><br><span class="line">echo date(&quot;Y.m.d&quot;) . &quot;&lt;br&gt;&quot;;</span><br><span class="line">echo date(&quot;Y-m-d&quot;);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 
+<p>格式字串可以识别以下 format 参数的字符串</p>
+<p><img src="https://img.php.cn/upload/image/198/160/267/1475994567325219.png" alt="avatar"></p>
+<p>例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &quot;date()函数输出格式化日期:&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">&#x2F;&#x2F; 常用</span><br><span class="line">echo date(&quot;l&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 注意是字符L的小写，不是1，也不是竖线</span><br><span class="line">echo date(&quot;Y-m-d H:i:s&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y年m月d日 H时i分s秒&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">&#x2F;&#x2F; 从日期格式的字符串中获取日期2005-03-21</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;2005-03-21 11:15:38&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 days&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 昨天的日期</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 week&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个星期今天的日期</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 month&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个月今天的日期</span><br><span class="line">echo date(&quot;Y-m-d H&quot;,strtotime(&quot;next Thursday&quot;));&#x2F;&#x2F; 下个周四的日期和小</span><br><span class="line">echo date(&#39;Y-m-d&#39;,strtotime(&#39;2015-06-08 -2 days&#39;)); &#x2F;&#x2F; 某个日期的前n天</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -309,7 +315,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.52581688.xyz/2019/07/14/nosql/" title="NoSQL 简介">http://www.52581688.xyz/2019/07/14/nosql/</a>
+    <a href="http://www.52581688.xyz/2016/07/14/php_date/" title="PHP date() 日期函数">http://www.52581688.xyz/2016/07/14/php_date/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -319,11 +325,22 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/date/" rel="tag"><i class="fa fa-tag"></i> date</a>
+              <a href="/tags/php/" rel="tag"><i class="fa fa-tag"></i> php</a>
+          </div>
 
         
 
 
         
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2017/06/14/nosql/" rel="next" title="NoSQL 简介">
+      NoSQL 简介 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -335,6 +352,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -381,7 +399,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL-简介"><span class="nav-number">1.</span> <span class="nav-text">NoSQL 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是NoSQL"><span class="nav-number">2.</span> <span class="nav-text">什么是NoSQL?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么使用NoSQL"><span class="nav-number">3.</span> <span class="nav-text">为什么使用NoSQL ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系型数据库遵循ACID规则"><span class="nav-number">4.</span> <span class="nav-text">关系型数据库遵循ACID规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、A-Atomicity-原子性"><span class="nav-number">4.1.</span> <span class="nav-text">1、A (Atomicity) 原子性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、C-Consistency-一致性"><span class="nav-number">4.2.</span> <span class="nav-text">2、C (Consistency) 一致性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、I-Isolation-独立性"><span class="nav-number">4.3.</span> <span class="nav-text">3、I (Isolation) 独立性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、D-Durability-持久性"><span class="nav-number">4.4.</span> <span class="nav-text">4、D (Durability) 持久性</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-date-日期函数"><span class="nav-number">1.</span> <span class="nav-text">PHP date() 日期函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-date-函数"><span class="nav-number">2.</span> <span class="nav-text">PHP date() 函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -397,13 +415,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span>
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -461,12 +487,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">3k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">3 分钟</span>
 </div>
 
         
@@ -527,6 +553,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'd599f4dcb5b85d531651',
+      clientSecret: '03d3c080dad01ceacb6d50fd126b274f2c8daf05',
+      repo        : 'gitcomment',
+      owner       : 'deaningo',
+      admin       : ['亦初'],
+      id          : '2404991b09a8b66279c34a558c26c2bf',
+        language: 'zh-CN',
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 <!-- 页面点击小红心 -->
