@@ -1,59 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>NoSQL 简介</title>
-      <link href="/2017/06/14/nosql/"/>
-      <url>/2017/06/14/nosql/</url>
-      
-        <content type="html"><![CDATA[<p>NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p><a id="more"></a><h2 id="NoSQL-简介"><a href="#NoSQL-简介" class="headerlink" title="NoSQL 简介"></a>NoSQL 简介</h2><p>在现代的计算系统上每天网络上都会产生庞大的数据量。</p><p>这些数据有很大一部分是由关系数据库管理系统（RDBMS）来处理。 1970年 E.F.Codd’s提出的关系模型的论文 “A relational model of data for large shared data banks”，这使得数据建模和应用程序编程更加简单。</p><p>通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。</p><p>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p><h2 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL?"></a>什么是NoSQL?</h2><p>NoSQL，指的是非关系型的数据库。NoSQL有时也称作Not Only SQL的缩写，是对不同于传统的关系型数据库的数据库管理系统的统称。</p><p>NoSQL用于超大规模数据的存储。（例如谷歌或Facebook每天为他们的用户收集万亿比特的数据）。这些类型的数据存储不需要固定的模式，无需多余操作就可以横向扩展。</p><h2 id="为什么使用NoSQL"><a href="#为什么使用NoSQL" class="headerlink" title="为什么使用NoSQL ?"></a>为什么使用NoSQL ?</h2><p>今天我们可以通过第三方平台（如：Google,Facebook等）可以很容易的访问和抓取数据。用户的个人信息，社交网络，地理位置，用户生成的数据和用户操作日志已经成倍的增加。我们如果要对这些用户数据进行挖掘，那SQL数据库已经不适合这些应用了, NoSQL 数据库的发展却能很好的处理这些大的数据。</p><h2 id="关系型数据库遵循ACID规则"><a href="#关系型数据库遵循ACID规则" class="headerlink" title="关系型数据库遵循ACID规则"></a>关系型数据库遵循ACID规则</h2><p>事务在英文中是transaction，和现实世界中的交易很类似，它有如下四个特性：</p><h3 id="1、A-Atomicity-原子性"><a href="#1、A-Atomicity-原子性" class="headerlink" title="1、A (Atomicity) 原子性"></a>1、A (Atomicity) 原子性</h3><p>原子性很容易理解，也就是说事务里的所有操作要么全部做完，要么都不做，事务成功的条件是事务里的所有操作都成功，只要有一个操作失败，整个事务就失败，需要回滚。</p><p>比如银行转账，从A账户转100元至B账户，分为两个步骤：1）从A账户取100元；2）存入100元至B账户。这两步要么一起完成，要么一起不完成，如果只完成第一步，第二步失败，钱会莫名其妙少了100元。</p><h3 id="2、C-Consistency-一致性"><a href="#2、C-Consistency-一致性" class="headerlink" title="2、C (Consistency) 一致性"></a>2、C (Consistency) 一致性</h3><p>一致性也比较容易理解，也就是说数据库要一直处于一致的状态，事务的运行不会改变数据库原本的一致性约束。</p><p>例如现有完整性约束a+b=10，如果一个事务改变了a，那么必须得改变b，使得事务结束后依然满足a+b=10，否则事务失败。</p><h3 id="3、I-Isolation-独立性"><a href="#3、I-Isolation-独立性" class="headerlink" title="3、I (Isolation) 独立性"></a>3、I (Isolation) 独立性</h3><p>所谓的独立性是指并发的事务之间不会互相影响，如果一个事务要访问的数据正在被另外一个事务修改，只要另外一个事务未提交，它所访问的数据就不受未提交事务的影响。</p><p>比如现在有个交易是从A账户转100元至B账户，在这个交易还未完成的情况下，如果此时B查询自己的账户，是看不到新增加的100元的。</p><h3 id="4、D-Durability-持久性"><a href="#4、D-Durability-持久性" class="headerlink" title="4、D (Durability) 持久性"></a>4、D (Durability) 持久性</h3><p>持久性是指一旦事务提交后，它所做的修改将会永久的保存在数据库上，即使出现宕机也不会丢失。</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>NoSQL 简介</title>
+    <url>/2017/06/14/nosql/</url>
+    <content><![CDATA[<p>NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p>
+<a id="more"></a>
+<h2 id="NoSQL-简介"><a href="#NoSQL-简介" class="headerlink" title="NoSQL 简介"></a>NoSQL 简介</h2><p>在现代的计算系统上每天网络上都会产生庞大的数据量。</p>
+<p>这些数据有很大一部分是由关系数据库管理系统（RDBMS）来处理。 1970年 E.F.Codd’s提出的关系模型的论文 “A relational model of data for large shared data banks”，这使得数据建模和应用程序编程更加简单。</p>
+<p>通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。</p>
+<p>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p>
+<h2 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL?"></a>什么是NoSQL?</h2><p>NoSQL，指的是非关系型的数据库。NoSQL有时也称作Not Only SQL的缩写，是对不同于传统的关系型数据库的数据库管理系统的统称。</p>
+<p>NoSQL用于超大规模数据的存储。（例如谷歌或Facebook每天为他们的用户收集万亿比特的数据）。这些类型的数据存储不需要固定的模式，无需多余操作就可以横向扩展。</p>
+<h2 id="为什么使用NoSQL"><a href="#为什么使用NoSQL" class="headerlink" title="为什么使用NoSQL ?"></a>为什么使用NoSQL ?</h2><p>今天我们可以通过第三方平台（如：Google,Facebook等）可以很容易的访问和抓取数据。用户的个人信息，社交网络，地理位置，用户生成的数据和用户操作日志已经成倍的增加。我们如果要对这些用户数据进行挖掘，那SQL数据库已经不适合这些应用了, NoSQL 数据库的发展却能很好的处理这些大的数据。</p>
+<h2 id="关系型数据库遵循ACID规则"><a href="#关系型数据库遵循ACID规则" class="headerlink" title="关系型数据库遵循ACID规则"></a>关系型数据库遵循ACID规则</h2><p>事务在英文中是transaction，和现实世界中的交易很类似，它有如下四个特性：</p>
+<h3 id="1、A-Atomicity-原子性"><a href="#1、A-Atomicity-原子性" class="headerlink" title="1、A (Atomicity) 原子性"></a>1、A (Atomicity) 原子性</h3><p>原子性很容易理解，也就是说事务里的所有操作要么全部做完，要么都不做，事务成功的条件是事务里的所有操作都成功，只要有一个操作失败，整个事务就失败，需要回滚。</p>
+<p>比如银行转账，从A账户转100元至B账户，分为两个步骤：1）从A账户取100元；2）存入100元至B账户。这两步要么一起完成，要么一起不完成，如果只完成第一步，第二步失败，钱会莫名其妙少了100元。</p>
+<h3 id="2、C-Consistency-一致性"><a href="#2、C-Consistency-一致性" class="headerlink" title="2、C (Consistency) 一致性"></a>2、C (Consistency) 一致性</h3><p>一致性也比较容易理解，也就是说数据库要一直处于一致的状态，事务的运行不会改变数据库原本的一致性约束。</p>
+<p>例如现有完整性约束a+b=10，如果一个事务改变了a，那么必须得改变b，使得事务结束后依然满足a+b=10，否则事务失败。</p>
+<h3 id="3、I-Isolation-独立性"><a href="#3、I-Isolation-独立性" class="headerlink" title="3、I (Isolation) 独立性"></a>3、I (Isolation) 独立性</h3><p>所谓的独立性是指并发的事务之间不会互相影响，如果一个事务要访问的数据正在被另外一个事务修改，只要另外一个事务未提交，它所访问的数据就不受未提交事务的影响。</p>
+<p>比如现在有个交易是从A账户转100元至B账户，在这个交易还未完成的情况下，如果此时B查询自己的账户，是看不到新增加的100元的。</p>
+<h3 id="4、D-Durability-持久性"><a href="#4、D-Durability-持久性" class="headerlink" title="4、D (Durability) 持久性"></a>4、D (Durability) 持久性</h3><p>持久性是指一旦事务提交后，它所做的修改将会永久的保存在数据库上，即使出现宕机也不会丢失。</p>
+]]></content>
       <categories>
-          
-          <category> NoSQL </category>
-          
+        <category>NoSQL</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> NoSQL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>PHP date() 日期函数</title>
-      <link href="/2016/07/14/php_date/"/>
-      <url>/2016/07/14/php_date/</url>
-      
-        <content type="html"><![CDATA[<p>PHP date() 日期函数的基本使用和用法案例。</p><a id="more"></a><h1 id="PHP-date-日期函数"><a href="#PHP-date-日期函数" class="headerlink" title="PHP date() 日期函数"></a>PHP date() 日期函数</h1><p>PHP date() 函数</p><p>PHP date() 函数用于格式化时间/日期。</p><h1 id="PHP-date-函数"><a href="#PHP-date-函数" class="headerlink" title="PHP date() 函数"></a>PHP date() 函数</h1><p>PHP date() 函数可把时间戳格式化为可读性更好的日期和时间。</p><p>时间戳是一个字符序列，表示一定的事件发生的日期/时间。</p><p>PHP Date() - 格式化日期</p><p>date() 函数的第一个必需参数 format 规定了如何格式化日期/时间。</p><p>这里列出了一些可用的字符：</p><p>d - 代表月中的天 (01 - 31)</p><p>m - 代表月 (01 - 12)</p><p>Y - 代表年 (四位数)</p><p>如需了解 format 参数中可用的所有字符列表，请查阅我们的 PHP Date 参考手册，date() 函数。</p><p>可以在字母之间插入其他字符，比如 “/“、”.” 或者 “-“，这样就可以增加附加格式了：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br&gt;&quot;;</span><br><span class="line">echo date(&quot;Y.m.d&quot;) . &quot;&lt;br&gt;&quot;;</span><br><span class="line">echo date(&quot;Y-m-d&quot;);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure><p>格式字串可以识别以下 format 参数的字符串</p><p><img src="https://img.php.cn/upload/image/198/160/267/1475994567325219.png" alt="avatar"></p><p>例子</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &quot;date()函数输出格式化日期:&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">&#x2F;&#x2F; 常用</span><br><span class="line">echo date(&quot;l&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 注意是字符L的小写，不是1，也不是竖线</span><br><span class="line">echo date(&quot;Y-m-d H:i:s&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y年m月d日 H时i分s秒&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">&#x2F;&#x2F; 从日期格式的字符串中获取日期2005-03-21</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;2005-03-21 11:15:38&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 days&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 昨天的日期</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 week&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个星期今天的日期</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 month&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个月今天的日期</span><br><span class="line">echo date(&quot;Y-m-d H&quot;,strtotime(&quot;next Thursday&quot;));&#x2F;&#x2F; 下个周四的日期和小</span><br><span class="line">echo date(&#39;Y-m-d&#39;,strtotime(&#39;2015-06-08 -2 days&#39;)); &#x2F;&#x2F; 某个日期的前n天</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>NoSQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PHP date() 日期函数</title>
+    <url>/2016/07/14/php_date/</url>
+    <content><![CDATA[<p>PHP date() 日期函数的基本使用和用法案例。</p>
+<a id="more"></a>
+<h1 id="PHP-date-日期函数"><a href="#PHP-date-日期函数" class="headerlink" title="PHP date() 日期函数"></a>PHP date() 日期函数</h1><p>PHP date() 函数</p>
+<p>PHP date() 函数用于格式化时间/日期。</p>
+<h1 id="PHP-date-函数"><a href="#PHP-date-函数" class="headerlink" title="PHP date() 函数"></a>PHP date() 函数</h1><p>PHP date() 函数可把时间戳格式化为可读性更好的日期和时间。</p>
+<p>时间戳是一个字符序列，表示一定的事件发生的日期/时间。</p>
+<p>PHP Date() - 格式化日期</p>
+<p>date() 函数的第一个必需参数 format 规定了如何格式化日期/时间。</p>
+<p>这里列出了一些可用的字符：</p>
+<p>d - 代表月中的天 (01 - 31)</p>
+<p>m - 代表月 (01 - 12)</p>
+<p>Y - 代表年 (四位数)</p>
+<p>如需了解 format 参数中可用的所有字符列表，请查阅我们的 PHP Date 参考手册，date() 函数。</p>
+<p>可以在字母之间插入其他字符，比如 “/“、”.” 或者 “-“，这样就可以增加附加格式了：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br&gt;&quot;;</span><br><span class="line">echo date(&quot;Y.m.d&quot;) . &quot;&lt;br&gt;&quot;;</span><br><span class="line">echo date(&quot;Y-m-d&quot;);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>格式字串可以识别以下 format 参数的字符串</p>
+<p><img src="https://img.php.cn/upload/image/198/160/267/1475994567325219.png" alt="avatar"></p>
+<p>例子</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &quot;date()函数输出格式化日期:&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">&#x2F;&#x2F; 常用</span><br><span class="line">echo date(&quot;l&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 注意是字符L的小写，不是1，也不是竖线</span><br><span class="line">echo date(&quot;Y-m-d H:i:s&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y年m月d日 H时i分s秒&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">&#x2F;&#x2F; 从日期格式的字符串中获取日期2005-03-21</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;2005-03-21 11:15:38&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 days&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 昨天的日期</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 week&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个星期今天的日期</span><br><span class="line">echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 month&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个月今天的日期</span><br><span class="line">echo date(&quot;Y-m-d H&quot;,strtotime(&quot;next Thursday&quot;));&#x2F;&#x2F; 下个周四的日期和小</span><br><span class="line">echo date(&#39;Y-m-d&#39;,strtotime(&#39;2015-06-08 -2 days&#39;)); &#x2F;&#x2F; 某个日期的前n天</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-          
-          <category> PHP </category>
-          
+        <category>PHP</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> date </tag>
-            
-            <tag> php </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>date</tag>
+        <tag>php</tag>
+      </tags>
+  </entry>
 </search>
