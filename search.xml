@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>NoSQL 简介</title>
-    <url>/2017/06/14/nosql/</url>
-    <content><![CDATA[<p>NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p>
+    <title>Vue学习</title>
+    <url>/2018/05/14/vue_study/</url>
+    <content><![CDATA[<p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
 <a id="more"></a>
-<h2 id="NoSQL-简介"><a href="#NoSQL-简介" class="headerlink" title="NoSQL 简介"></a>NoSQL 简介</h2><p>在现代的计算系统上每天网络上都会产生庞大的数据量。</p>
-<p>这些数据有很大一部分是由关系数据库管理系统（RDBMS）来处理。 1970年 E.F.Codd’s提出的关系模型的论文 “A relational model of data for large shared data banks”，这使得数据建模和应用程序编程更加简单。</p>
-<p>通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。</p>
-<p>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p>
-<h2 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL?"></a>什么是NoSQL?</h2><p>NoSQL，指的是非关系型的数据库。NoSQL有时也称作Not Only SQL的缩写，是对不同于传统的关系型数据库的数据库管理系统的统称。</p>
-<p>NoSQL用于超大规模数据的存储。（例如谷歌或Facebook每天为他们的用户收集万亿比特的数据）。这些类型的数据存储不需要固定的模式，无需多余操作就可以横向扩展。</p>
-<h2 id="为什么使用NoSQL"><a href="#为什么使用NoSQL" class="headerlink" title="为什么使用NoSQL ?"></a>为什么使用NoSQL ?</h2><p>今天我们可以通过第三方平台（如：Google,Facebook等）可以很容易的访问和抓取数据。用户的个人信息，社交网络，地理位置，用户生成的数据和用户操作日志已经成倍的增加。我们如果要对这些用户数据进行挖掘，那SQL数据库已经不适合这些应用了, NoSQL 数据库的发展却能很好的处理这些大的数据。</p>
-<h2 id="关系型数据库遵循ACID规则"><a href="#关系型数据库遵循ACID规则" class="headerlink" title="关系型数据库遵循ACID规则"></a>关系型数据库遵循ACID规则</h2><p>事务在英文中是transaction，和现实世界中的交易很类似，它有如下四个特性：</p>
-<h3 id="1、A-Atomicity-原子性"><a href="#1、A-Atomicity-原子性" class="headerlink" title="1、A (Atomicity) 原子性"></a>1、A (Atomicity) 原子性</h3><p>原子性很容易理解，也就是说事务里的所有操作要么全部做完，要么都不做，事务成功的条件是事务里的所有操作都成功，只要有一个操作失败，整个事务就失败，需要回滚。</p>
-<p>比如银行转账，从A账户转100元至B账户，分为两个步骤：1）从A账户取100元；2）存入100元至B账户。这两步要么一起完成，要么一起不完成，如果只完成第一步，第二步失败，钱会莫名其妙少了100元。</p>
-<h3 id="2、C-Consistency-一致性"><a href="#2、C-Consistency-一致性" class="headerlink" title="2、C (Consistency) 一致性"></a>2、C (Consistency) 一致性</h3><p>一致性也比较容易理解，也就是说数据库要一直处于一致的状态，事务的运行不会改变数据库原本的一致性约束。</p>
-<p>例如现有完整性约束a+b=10，如果一个事务改变了a，那么必须得改变b，使得事务结束后依然满足a+b=10，否则事务失败。</p>
-<h3 id="3、I-Isolation-独立性"><a href="#3、I-Isolation-独立性" class="headerlink" title="3、I (Isolation) 独立性"></a>3、I (Isolation) 独立性</h3><p>所谓的独立性是指并发的事务之间不会互相影响，如果一个事务要访问的数据正在被另外一个事务修改，只要另外一个事务未提交，它所访问的数据就不受未提交事务的影响。</p>
-<p>比如现在有个交易是从A账户转100元至B账户，在这个交易还未完成的情况下，如果此时B查询自己的账户，是看不到新增加的100元的。</p>
-<h3 id="4、D-Durability-持久性"><a href="#4、D-Durability-持久性" class="headerlink" title="4、D (Durability) 持久性"></a>4、D (Durability) 持久性</h3><p>持久性是指一旦事务提交后，它所做的修改将会永久的保存在数据库上，即使出现宕机也不会丢失。</p>
+<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><p> a.文本<br> b.纯html<br>  v-html 防止xss攻击<br> c.表达式</p>
+<h2 id="指令-带有v-前缀"><a href="#指令-带有v-前缀" class="headerlink" title="指令:带有v-前缀"></a>指令:带有v-前缀</h2><p> v-bind<br> v-if<br> v-on:click<br> v-model:<br>   -双向数据绑定</p>
+<h2 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h2><p> v-bind:src =&gt; :src<br> v-on:click =&gt; @click</p>
+<h1 id="计算属性-复杂逻辑：computed"><a href="#计算属性-复杂逻辑：computed" class="headerlink" title="计算属性-复杂逻辑：computed"></a>计算属性-复杂逻辑：computed</h1><p> -计算属性时基于他们的依赖进行缓存的。<br> -计算属性只有在它的相关依赖才会重新请求</p>
+<h1 id="class与style绑定"><a href="#class与style绑定" class="headerlink" title="class与style绑定"></a>class与style绑定</h1><h2 id="绑定html-class"><a href="#绑定html-class" class="headerlink" title="绑定html class"></a>绑定html class</h2><p> -对象语法<br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;p class&#x3D;&quot;default&quot; :class&#x3D;&quot;&#123;active:isShow,show:isShow2&#125;&quot;&gt;class样式&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure><br> -数组语法<br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;p class&#x3D;&quot;default&quot; :class&#x3D;&quot;[who,&#39;show&#39;]&quot;&gt;class样式&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="绑定内联样式"><a href="#绑定内联样式" class="headerlink" title="绑定内联样式"></a>绑定内联样式</h2><p> -对象语法<br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;p class&#x3D;&quot;default&quot; :style&#x3D;&quot;&#123;background:color&#125;&quot;&gt;class样式&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure><br> -数组语法</p>
+<h1 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h1><p> v-if<br> v-else<br> template v-if:template不会渲染到dom节点<br> v-show：v-show不支持template和v-else</p>
+<p>#列表渲染<br> v-for<br>  a.in<br>  b.of<br> key<br>  -跟踪每个节点的身份，从而重用和重新排序<br>  -理想的key值时每项都有且唯一的id<br> 数组更新检测<br>  a.使用以下方式操作数组,可以检测更新<br>  push() pop() shift() unshift() splice() sort() reverse()</p>
 ]]></content>
       <categories>
-        <category>NoSQL</category>
+        <category>Vue</category>
       </categories>
-      <tags>
-        <tag>NoSQL</tag>
-      </tags>
   </entry>
   <entry>
     <title>PHP date() 日期函数</title>
@@ -57,6 +47,34 @@
       <tags>
         <tag>date</tag>
         <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NoSQL 简介</title>
+    <url>/2017/06/14/nosql/</url>
+    <content><![CDATA[<p>NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p>
+<a id="more"></a>
+<h2 id="NoSQL-简介"><a href="#NoSQL-简介" class="headerlink" title="NoSQL 简介"></a>NoSQL 简介</h2><p>在现代的计算系统上每天网络上都会产生庞大的数据量。</p>
+<p>这些数据有很大一部分是由关系数据库管理系统（RDBMS）来处理。 1970年 E.F.Codd’s提出的关系模型的论文 “A relational model of data for large shared data banks”，这使得数据建模和应用程序编程更加简单。</p>
+<p>通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。</p>
+<p>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p>
+<h2 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL?"></a>什么是NoSQL?</h2><p>NoSQL，指的是非关系型的数据库。NoSQL有时也称作Not Only SQL的缩写，是对不同于传统的关系型数据库的数据库管理系统的统称。</p>
+<p>NoSQL用于超大规模数据的存储。（例如谷歌或Facebook每天为他们的用户收集万亿比特的数据）。这些类型的数据存储不需要固定的模式，无需多余操作就可以横向扩展。</p>
+<h2 id="为什么使用NoSQL"><a href="#为什么使用NoSQL" class="headerlink" title="为什么使用NoSQL ?"></a>为什么使用NoSQL ?</h2><p>今天我们可以通过第三方平台（如：Google,Facebook等）可以很容易的访问和抓取数据。用户的个人信息，社交网络，地理位置，用户生成的数据和用户操作日志已经成倍的增加。我们如果要对这些用户数据进行挖掘，那SQL数据库已经不适合这些应用了, NoSQL 数据库的发展却能很好的处理这些大的数据。</p>
+<h2 id="关系型数据库遵循ACID规则"><a href="#关系型数据库遵循ACID规则" class="headerlink" title="关系型数据库遵循ACID规则"></a>关系型数据库遵循ACID规则</h2><p>事务在英文中是transaction，和现实世界中的交易很类似，它有如下四个特性：</p>
+<h3 id="1、A-Atomicity-原子性"><a href="#1、A-Atomicity-原子性" class="headerlink" title="1、A (Atomicity) 原子性"></a>1、A (Atomicity) 原子性</h3><p>原子性很容易理解，也就是说事务里的所有操作要么全部做完，要么都不做，事务成功的条件是事务里的所有操作都成功，只要有一个操作失败，整个事务就失败，需要回滚。</p>
+<p>比如银行转账，从A账户转100元至B账户，分为两个步骤：1）从A账户取100元；2）存入100元至B账户。这两步要么一起完成，要么一起不完成，如果只完成第一步，第二步失败，钱会莫名其妙少了100元。</p>
+<h3 id="2、C-Consistency-一致性"><a href="#2、C-Consistency-一致性" class="headerlink" title="2、C (Consistency) 一致性"></a>2、C (Consistency) 一致性</h3><p>一致性也比较容易理解，也就是说数据库要一直处于一致的状态，事务的运行不会改变数据库原本的一致性约束。</p>
+<p>例如现有完整性约束a+b=10，如果一个事务改变了a，那么必须得改变b，使得事务结束后依然满足a+b=10，否则事务失败。</p>
+<h3 id="3、I-Isolation-独立性"><a href="#3、I-Isolation-独立性" class="headerlink" title="3、I (Isolation) 独立性"></a>3、I (Isolation) 独立性</h3><p>所谓的独立性是指并发的事务之间不会互相影响，如果一个事务要访问的数据正在被另外一个事务修改，只要另外一个事务未提交，它所访问的数据就不受未提交事务的影响。</p>
+<p>比如现在有个交易是从A账户转100元至B账户，在这个交易还未完成的情况下，如果此时B查询自己的账户，是看不到新增加的100元的。</p>
+<h3 id="4、D-Durability-持久性"><a href="#4、D-Durability-持久性" class="headerlink" title="4、D (Durability) 持久性"></a>4、D (Durability) 持久性</h3><p>持久性是指一旦事务提交后，它所做的修改将会永久的保存在数据库上，即使出现宕机也不会丢失。</p>
+]]></content>
+      <categories>
+        <category>NoSQL</category>
+      </categories>
+      <tags>
+        <tag>NoSQL</tag>
       </tags>
   </entry>
 </search>
