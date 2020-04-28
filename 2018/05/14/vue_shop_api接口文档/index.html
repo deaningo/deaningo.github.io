@@ -28,28 +28,32 @@
     var CONFIG = {"hostname":"deaningo.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="亦初">
-<meta property="og:url" content="https://deaningo.github.io/index.html">
+  <meta name="description" content="1. 电商管理后台 API 接口文档1.1. API V1 接口说明 接口基准地址：http:&#x2F;&#x2F;127.0.0.1:8888&#x2F;api&#x2F;private&#x2F;v1&#x2F; 服务端已开启 CORS 跨域支持 API V1 认证统一使用 Token 认证 需要授权的 API ，必须在请求头中使用 Authorization 字段提供 token 令牌 使用 HTTP Status Code 标识状态 数据返回格式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue_shop api文档">
+<meta property="og:url" content="https://deaningo.github.io/2018/05/14/vue_shop_api%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/index.html">
 <meta property="og:site_name" content="亦初">
+<meta property="og:description" content="1. 电商管理后台 API 接口文档1.1. API V1 接口说明 接口基准地址：http:&#x2F;&#x2F;127.0.0.1:8888&#x2F;api&#x2F;private&#x2F;v1&#x2F; 服务端已开启 CORS 跨域支持 API V1 认证统一使用 Token 认证 需要授权的 API ，必须在请求头中使用 Authorization 字段提供 token 令牌 使用 HTTP Status Code 标识状态 数据返回格式">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-05-14T09:01:34.000Z">
+<meta property="article:modified_time" content="2020-04-28T03:23:47.510Z">
 <meta property="article:author" content="亦初">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://deaningo.github.io/">
+<link rel="canonical" href="https://deaningo.github.io/2018/05/14/vue_shop_api%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>亦初</title>
+  <title>Vue_shop api文档 | 亦初</title>
   
 
 
@@ -190,241 +194,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://deaningo.github.io/2018/05/14/vue_study/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/15867697526861.png">
-      <meta itemprop="name" content="亦初">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="亦初">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/05/14/vue_study/" class="post-title-link" itemprop="url">Vue学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-05-14 17:01:34" itemprop="dateCreated datePublished" datetime="2018-05-14T17:01:34+08:00">2018-05-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-26 11:10:38" itemprop="dateModified" datetime="2020-04-26T11:10:38+08:00">2020-04-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2018/05/14/vue_study/" class="post-meta-item leancloud_visitors" data-flag-title="Vue学习" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/05/14/vue_study/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/vue_study/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>934</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/05/14/vue_study/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://deaningo.github.io/2018/05/14/vue_scop/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/15867697526861.png">
-      <meta itemprop="name" content="亦初">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="亦初">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/05/14/vue_scop/" class="post-title-link" itemprop="url">Vue学习-理解vue之element-ui中的 slot-scope</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-05-14 17:01:34" itemprop="dateCreated datePublished" datetime="2018-05-14T17:01:34+08:00">2018-05-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-26 13:51:24" itemprop="dateModified" datetime="2020-04-26T13:51:24+08:00">2020-04-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2018/05/14/vue_scop/" class="post-meta-item leancloud_visitors" data-flag-title="Vue学习-理解vue之element-ui中的 slot-scope" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/05/14/vue_scop/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/vue_scop/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>603</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>理解vue之element-ui中的 slot-scope</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/05/14/vue_scop/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -440,10 +213,9 @@
       <meta itemprop="name" content="亦初">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/05/14/vue_shop_api%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="post-title-link" itemprop="url">Vue_shop api文档</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Vue_shop api文档
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -517,7 +289,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="1-电商管理后台-API-接口文档"><a href="#1-电商管理后台-API-接口文档" class="headerlink" title="1. 电商管理后台 API 接口文档"></a>1. 电商管理后台 API 接口文档</h1><h2 id="1-1-API-V1-接口说明"><a href="#1-1-API-V1-接口说明" class="headerlink" title="1.1. API V1 接口说明"></a>1.1. API V1 接口说明</h2><ul>
+        <h1 id="1-电商管理后台-API-接口文档"><a href="#1-电商管理后台-API-接口文档" class="headerlink" title="1. 电商管理后台 API 接口文档"></a>1. 电商管理后台 API 接口文档</h1><h2 id="1-1-API-V1-接口说明"><a href="#1-1-API-V1-接口说明" class="headerlink" title="1.1. API V1 接口说明"></a>1.1. API V1 接口说明</h2><ul>
 <li>接口基准地址：<code>http://127.0.0.1:8888/api/private/v1/</code></li>
 <li>服务端已开启 CORS 跨域支持</li>
 <li>API V1 认证统一使用 Token 认证</li>
@@ -2569,259 +2341,86 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">options: &#123;</span><br><span class="line">        title: &#123;</span><br><span class="line">          text: <span class="string">'用户来源'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        tooltip: &#123;</span><br><span class="line">          trigger: <span class="string">'axis'</span>,</span><br><span class="line">          axisPointer: &#123;</span><br><span class="line">            type: <span class="string">'cross'</span>,</span><br><span class="line">            label: &#123;</span><br><span class="line">              backgroundColor: <span class="string">'#E9EEF3'</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        grid: &#123;</span><br><span class="line">          left: <span class="string">'3%'</span>,</span><br><span class="line">          right: <span class="string">'4%'</span>,</span><br><span class="line">          bottom: <span class="string">'3%'</span>,</span><br><span class="line">          containLabel: <span class="literal">true</span></span><br><span class="line">        &#125;,</span><br><span class="line">        xAxis: [</span><br><span class="line">          &#123;</span><br><span class="line">            boundaryGap: <span class="literal">false</span></span><br><span class="line">          &#125;</span><br><span class="line">        ],</span><br><span class="line">        yAxis: [</span><br><span class="line">          &#123;</span><br><span class="line">            type: <span class="string">'value'</span></span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+	  <div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  
+	 </div>
+        <div class="reward-container">
+  <div>如果觉得我的文章对你有用，请随意赞赏.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://deaningo.github.io/2017/06/14/nosql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/15867697526861.png">
-      <meta itemprop="name" content="亦初">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="亦初">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/06/14/nosql/" class="post-title-link" itemprop="url">NoSQL 简介</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-06-14 17:01:34" itemprop="dateCreated datePublished" datetime="2017-06-14T17:01:34+08:00">2017-06-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-16 10:11:23" itemprop="dateModified" datetime="2020-04-16T10:11:23+08:00">2020-04-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NoSQL/" itemprop="url" rel="index"><span itemprop="name">NoSQL</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2017/06/14/nosql/" class="post-meta-item leancloud_visitors" data-flag-title="NoSQL 简介" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2017/06/14/nosql/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2017/06/14/nosql/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="亦初 微信支付">
+        <p>微信支付</p>
+      </div>
       
-          <p>NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/06/14/nosql/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="亦初 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
         
-      
-    </div>
 
-    
-    
-    
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>亦初
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://deaningo.github.io/2018/05/14/vue_shop_api%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" title="Vue_shop api文档">https://deaningo.github.io/2018/05/14/vue_shop_api接口文档/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://deaningo.github.io/2016/07/14/php_date/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/15867697526861.png">
-      <meta itemprop="name" content="亦初">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="亦初">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/07/14/php_date/" class="post-title-link" itemprop="url">PHP date() 日期函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-07-14 17:01:34" itemprop="dateCreated datePublished" datetime="2016-07-14T17:01:34+08:00">2016-07-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-16 10:11:26" itemprop="dateModified" datetime="2020-04-16T10:11:26+08:00">2020-04-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/07/14/php_date/" class="post-meta-item leancloud_visitors" data-flag-title="PHP date() 日期函数" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2016/07/14/php_date/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/07/14/php_date/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>PHP date() 日期函数的基本使用和用法案例。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/07/14/php_date/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/06/14/nosql/" rel="prev" title="NoSQL 简介">
+      <i class="fa fa-chevron-left"></i> NoSQL 简介
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/05/14/vue_scop/" rel="next" title="Vue学习-理解vue之element-ui中的 slot-scope">
+      Vue学习-理解vue之element-ui中的 slot-scope <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -2868,6 +2467,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-电商管理后台-API-接口文档"><span class="nav-number">1.</span> <span class="nav-text">1. 电商管理后台 API 接口文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-API-V1-接口说明"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. API V1 接口说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-支持的请求方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1. 支持的请求方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-通用返回状态说明"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2. 通用返回状态说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-登录"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-登录验证接口"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1. 登录验证接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-用户管理"><span class="nav-number">1.3.</span> <span class="nav-text">1.3. 用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-用户数据列表"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1. 用户数据列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-添加用户"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2. 添加用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-修改用户状态"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3. 修改用户状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4-根据-ID-查询用户信息"><span class="nav-number">1.3.4.</span> <span class="nav-text">1.3.4. 根据 ID 查询用户信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-5-编辑用户提交"><span class="nav-number">1.3.5.</span> <span class="nav-text">1.3.5. 编辑用户提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-6-删除单个用户"><span class="nav-number">1.3.6.</span> <span class="nav-text">1.3.6. 删除单个用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-7-分配用户角色"><span class="nav-number">1.3.7.</span> <span class="nav-text">1.3.7. 分配用户角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-权限管理"><span class="nav-number">1.4.</span> <span class="nav-text">1.4. 权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-所有权限列表"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.4.1. 所有权限列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-左侧菜单权限"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.4.2. 左侧菜单权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-角色管理"><span class="nav-number">1.5.</span> <span class="nav-text">1.5. 角色管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-角色列表"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.5.1. 角色列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-2-添加角色"><span class="nav-number">1.5.2.</span> <span class="nav-text">1.5.2. 添加角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-3-根据-ID-查询角色"><span class="nav-number">1.5.3.</span> <span class="nav-text">1.5.3. 根据 ID 查询角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-4-编辑提交角色"><span class="nav-number">1.5.4.</span> <span class="nav-text">1.5.4. 编辑提交角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-5-删除角色"><span class="nav-number">1.5.5.</span> <span class="nav-text">1.5.5. 删除角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-6-角色授权"><span class="nav-number">1.5.6.</span> <span class="nav-text">1.5.6. 角色授权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-7-删除角色指定权限"><span class="nav-number">1.5.7.</span> <span class="nav-text">1.5.7. 删除角色指定权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-商品分类管理"><span class="nav-number">1.6.</span> <span class="nav-text">1.6. 商品分类管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-1-商品分类数据列表"><span class="nav-number">1.6.1.</span> <span class="nav-text">1.6.1. 商品分类数据列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-2-添加分类"><span class="nav-number">1.6.2.</span> <span class="nav-text">1.6.2. 添加分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-3-根据-id-查询分类"><span class="nav-number">1.6.3.</span> <span class="nav-text">1.6.3. 根据 id 查询分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-4-编辑提交分类"><span class="nav-number">1.6.4.</span> <span class="nav-text">1.6.4. 编辑提交分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-5-删除分类"><span class="nav-number">1.6.5.</span> <span class="nav-text">1.6.5. 删除分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-分类参数管理"><span class="nav-number">1.7.</span> <span class="nav-text">1.7. 分类参数管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-1-参数列表"><span class="nav-number">1.7.1.</span> <span class="nav-text">1.7.1. 参数列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-2-添加动态参数或者静态属性"><span class="nav-number">1.7.2.</span> <span class="nav-text">1.7.2. 添加动态参数或者静态属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-3-删除参数"><span class="nav-number">1.7.3.</span> <span class="nav-text">1.7.3. 删除参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-4-根据-ID-查询参数"><span class="nav-number">1.7.4.</span> <span class="nav-text">1.7.4. 根据 ID 查询参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-5-编辑提交参数"><span class="nav-number">1.7.5.</span> <span class="nav-text">1.7.5. 编辑提交参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-商品管理"><span class="nav-number">1.8.</span> <span class="nav-text">1.8. 商品管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8-1-商品列表数据"><span class="nav-number">1.8.1.</span> <span class="nav-text">1.8.1. 商品列表数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8-2-添加商品"><span class="nav-number">1.8.2.</span> <span class="nav-text">1.8.2. 添加商品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8-3-根据-ID-查询商品"><span class="nav-number">1.8.3.</span> <span class="nav-text">1.8.3. 根据 ID 查询商品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8-4-编辑提交商品"><span class="nav-number">1.8.4.</span> <span class="nav-text">1.8.4. 编辑提交商品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8-5-删除商品"><span class="nav-number">1.8.5.</span> <span class="nav-text">1.8.5. 删除商品</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-图片上传"><span class="nav-number">1.9.</span> <span class="nav-text">1.9. 图片上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-10-订单管理"><span class="nav-number">1.10.</span> <span class="nav-text">1.10. 订单管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-10-1-订单数据列表"><span class="nav-number">1.10.1.</span> <span class="nav-text">1.10.1. 订单数据列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-10-2-修改订单状态"><span class="nav-number">1.10.2.</span> <span class="nav-text">1.10.2. 修改订单状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-10-3-查看订单详情"><span class="nav-number">1.10.3.</span> <span class="nav-text">1.10.3. 查看订单详情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-10-4-修改地址"><span class="nav-number">1.10.4.</span> <span class="nav-text">1.10.4. 修改地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-10-5-查看物流信息"><span class="nav-number">1.10.5.</span> <span class="nav-text">1.10.5. 查看物流信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-11-数据统计"><span class="nav-number">1.11.</span> <span class="nav-text">1.11. 数据统计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-11-1-基于时间统计的折线图"><span class="nav-number">1.11.1.</span> <span class="nav-text">1.11.1.  基于时间统计的折线图</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
