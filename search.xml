@@ -95,7 +95,7 @@
   </entry>
   <entry>
     <title>Vue_shop api文档</title>
-    <url>/2018/05/14/vue_shop_api%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/</url>
+    <url>/2019/05/14/vue_shop_api/</url>
     <content><![CDATA[<h1 id="1-电商管理后台-API-接口文档"><a href="#1-电商管理后台-API-接口文档" class="headerlink" title="1. 电商管理后台 API 接口文档"></a>1. 电商管理后台 API 接口文档</h1><h2 id="1-1-API-V1-接口说明"><a href="#1-1-API-V1-接口说明" class="headerlink" title="1.1. API V1 接口说明"></a>1.1. API V1 接口说明</h2><ul>
 <li>接口基准地址：<code>http://127.0.0.1:8888/api/private/v1/</code></li>
 <li>服务端已开启 CORS 跨域支持</li>
