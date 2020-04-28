@@ -77,4 +77,20 @@
         <tag>NoSQL</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Vue学习-理解vue之element-ui中的 slot-scope</title>
+    <url>/2018/05/14/vue_scop/</url>
+    <content><![CDATA[<p>理解vue之element-ui中的 slot-scope</p>
+<a id="more"></a>
+<h2 id="Table-column-Scoped-Slot"><a href="#Table-column-Scoped-Slot" class="headerlink" title="Table-column Scoped Slot"></a>Table-column Scoped Slot</h2><p>name        说明<br>—    自定义列的内容，参数为 { row, column, $index }<br>header    自定义表头的内容. 参数为 { column, $index }</p>
+<p>在实际的使用过程中，这种用法当然不仅仅局限于此，其他的地方也会用到。到底这里有什么特别之处呢？<br>我们看看普通的table用法：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;&#x2F;el-table-column&gt;</span><br><span class="line">             &lt;el-table-column prop&#x3D;&quot;mg_state&quot; label&#x3D;&quot;状态&quot;&gt;</span><br><span class="line">                 &lt;template slot-scope&#x3D;&quot;scope&quot;&gt;</span><br><span class="line">                    &#123;&#123;scope.row.mg_state&#125;&#125;</span><br><span class="line">             　　&lt;&#x2F;template&gt;</span><br><span class="line">         &lt;&#x2F;el-table-column&gt;</span><br></pre></td></tr></table></figure></code></pre><p>template（模版） 在这里属于一个固定用法： <template slot-scope="scope"></p>
+<p>我们主要说一下这个scope是个什么东西，按照element上的提示：</p>
+<p>通过 Scoped slot 可以获取到 row, column, $index 和 store（table 内部的状态管理）的数据</p>
+<p>还有重要的一点，scope又并非是整个table，我们只是能通过scope.row获得当前的行数据。</p>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+  </entry>
 </search>
