@@ -64,37 +64,45 @@
     <url>/2019/07/14/view_php/</url>
     <content><![CDATA[<p>PHP面试题最全面归纳总结</p>
 <a id="more"></a>
-<h1 id="请选择以下代码运行的结果："><a href="#请选择以下代码运行的结果：" class="headerlink" title="请选择以下代码运行的结果： "></a>请选择以下代码运行的结果： <?php if ('1e3' == '1000') echo 'LOL'; ?></h1><p>A 无任何输出结果  　　　　B   LOL  　　　　　　C 不执行且报错</p>
+<h1 id="请选择以下代码运行的结果："><a href="#请选择以下代码运行的结果：" class="headerlink" title="请选择以下代码运行的结果："></a>请选择以下代码运行的结果：</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php if (&#39;1e3&#39; &#x3D;&#x3D; &#39;1000&#39;) echo &#39;LOL&#39;; ?&gt;</span><br></pre></td></tr></table></figure>
+<p>A 无任何输出结果  　　　　B   LOL  　　　　　　C 不执行且报错</p>
 <p>解析：1e3 是 科学计数法 实数的指数形式 为1乘以10的三次方，故‘1e3’==’1000’是成立的，输出echo ‘LOL’；</p>
-<h1 id="请选出以下代码运行的结果："><a href="#请选出以下代码运行的结果：" class="headerlink" title="请选出以下代码运行的结果： "></a>请选出以下代码运行的结果： <?php $a = "aabbzz"; $a++; echo $a; ?></h1><p>A b 　　　　　　　　　　　B aabbzz  　　　　　　　　　　C aabcaa</p>
-<p>解析： 字符串字母相加其实就是在末尾字母加一 如：$a = “a”; $a++;答应结果就是 b,$a=’’aa’;结果就是ab 故$a = “aabb”;打印结果就是 aabc ,如$a = “aabbz”;结果就是 aabca,因为Z是末尾字母故加一变为a,向前一位进一,b就变为c,故结果为C；</p>
-<h1 id="写出一下程序的输出结果："><a href="#写出一下程序的输出结果：" class="headerlink" title="写出一下程序的输出结果："></a>写出一下程序的输出结果：</h1><p>&lt;?php   　</p>
-<p>$data = [‘a’,’b’,’c’]; </p>
-<p>foreach($data as $k=&gt;$v){</p>
-<pre><code>$v = &amp;$data[$k];</code></pre><p>}</p>
-<blockquote>
-</blockquote>
-<p>A $data = [‘a’,’b’,’c’]; 　　　　　　　　　　　B $data = [‘b’,’b’,’c’];   　　　　　　　　　　C $data = [‘b’,’c’,’c’]; </p>
-<p>解析：这里有个考点要记得 就是&amp;是引用；修改引用变量的值，那么空间的值也会改变，第一次循环 得到$v=&amp;$data[0]=&gt;’a’,第二次循环$v=&amp;$data[1]=&gt;’b’,可见第一次引用的$data[0]的值已经被改变，所以此时的$data[0]=b,此时$v引用的$data[1],进入第三次循环 此时$v又变为 $v=&amp;$data[2]=&gt;’c’,,$v又一次改变，引用的$data[1]的值也被改变为C，所以此时的$data[1]=c,这样循环结束 $data[0]=&gt;’b’， $data[1]=&gt;’c’， $data[2]=&gt;’c’，</p>
-<h1 id="写出一下程序的输出结果：-lt-php-a-0-1-b-0-7-if-a-b-0-8-echo-true-else-echo-false-gt"><a href="#写出一下程序的输出结果：-lt-php-a-0-1-b-0-7-if-a-b-0-8-echo-true-else-echo-false-gt" class="headerlink" title="写出一下程序的输出结果：&lt;?php $a= 0.1; $b = 0.7;if($a+$b ==0.8){ echo true; }else{ echo false; } &gt;"></a>写出一下程序的输出结果：&lt;?php $a= 0.1; $b = 0.7;if($a+$b ==0.8){ echo true; }else{ echo false; } &gt;</h1><p>A 空; 　　　　B true;   　　　C false; 　　　　D、1；　　E、0；　　F:报错</p>
-<p>解析：这里的考点有两个：1，echo false和true的值；2、浮点类型不能用于精确计算；首先浮点类型的数据不能用于计算，他会将浮点类型转为二进制，所以有一定的损耗，故它无限接近于0.8，也就是0.79999999…，所以echo 应该是个false；echo false；结果是空；echo true；结果是1；</p>
-<h1 id="用PHP写出显示客户端的IP和服务端的IP"><a href="#用PHP写出显示客户端的IP和服务端的IP" class="headerlink" title="用PHP写出显示客户端的IP和服务端的IP"></a>用PHP写出显示客户端的IP和服务端的IP</h1><p>　　　　echo $_SERVER[‘REMOTE_ADDR’];//客户端IP</p>
-<p>　　　　echo gethostbyname(“<a href="http://www.baidu.com”)//服务端" target="_blank" rel="noopener">www.baidu.com”)//服务端</a></p>
-<h1 id="以下表达式的结果是："><a href="#以下表达式的结果是：" class="headerlink" title="以下表达式的结果是："></a>以下表达式的结果是：</h1><p>$a= 0;</p>
-<p>$b= 0;</p>
-<p>if($a= 3&gt;0 || $b= 3&gt;0){</p>
-<p>$a++;</p>
-<p>$b++;</p>
-<p>}</p>
-<p>echo $a,$b;</p>
-<p>A报错；　　　　B:1,1；    (要是真的只有两个选项该多好肯定大家都选B)</p>
-<p>解析：此题考查的是运算符的优先级问题，首先在此题中比较运算符&gt;逻辑运算符&gt;赋值，所以1，先看 3&gt;0为true,2，因为是||运算所以后面的$b=3&gt;0 形成短路作用，这时的$a=true,$b=0;</p>
-<p>　　故$a++;为1；$b++;为1这里解释下布尔类型运算不影响布尔类型结果；但是$b=0;$b++;就改变为1， echo true；结果为1，</p>
-<h1 id="PHP中如何优化多个if…esleif语句的情况"><a href="#PHP中如何优化多个if…esleif语句的情况" class="headerlink" title="PHP中如何优化多个if…esleif语句的情况"></a>PHP中如何优化多个if…esleif语句的情况</h1><pre><code>解析：首先尽可能将表达式可能性越大的越往前面放，其次如果我们判断的内容比较复杂且 判断的值只是字符串，整型，浮点 那么就可以用switch...case来代替</code></pre><h1 id="用正则-写出以139开头的手机号码"><a href="#用正则-写出以139开头的手机号码" class="headerlink" title="用正则 写出以139开头的手机号码"></a>用正则 写出以139开头的手机号码</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$str &#x3D; &#39;13812345678&#39;;</span><br><span class="line">$pattern &#x3D; &#39;&#x2F;^139\d&#123;8&#125;$&#x2F;&#39;;</span><br><span class="line">preg_match($pattern,$str,$macth);</span><br><span class="line">var_dump($macth);</span><br></pre></td></tr></table></figure>
-<h1 id="用PHP方式对目录进行遍历"><a href="#用PHP方式对目录进行遍历" class="headerlink" title="用PHP方式对目录进行遍历"></a>用PHP方式对目录进行遍历</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$dir &#x3D; &#39;.&#x2F;test&#39;;</span><br><span class="line"></span><br><span class="line">function loopDir($dir)&#123;</span><br><span class="line">    $handle &#x3D; opendir($dir);</span><br><span class="line">    while(false !&#x3D;&#x3D;($file &#x3D;readdir($handle)))&#123;</span><br><span class="line">        if($file!&#x3D;&#39;.&#39;&amp;&amp;$file!&#x3D;&#39;..&#39;)&#123;</span><br><span class="line">            echo $file.&quot;&lt;br&gt;&quot;;</span><br><span class="line">            if(filetype($dir.&#39;&#x2F;&#39;.$file)&#x3D;&#x3D;&#39;dir&#39;)&#123;</span><br><span class="line">                loopDir($dir.&#39;&#x2F;&#39;.$file);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loopDir($dir);</span><br></pre></td></tr></table></figure>
-<h1 id="请简单叙述-CGI-fastCGI-h和-PHP-FPM的区别"><a href="#请简单叙述-CGI-fastCGI-h和-PHP-FPM的区别" class="headerlink" title="请简单叙述 CGI fastCGI h和  PHP-FPM的区别"></a>请简单叙述 CGI fastCGI h和  PHP-FPM的区别</h1><p>CGI 代表为了联系PHP 和websevae 的一个桥梁<br>fastCGI 是CGI的改良版<br>PHP-FPM  进程管理器</p>
-<h1 id="冒泡排序很实用要记得"><a href="#冒泡排序很实用要记得" class="headerlink" title="冒泡排序很实用要记得"></a>冒泡排序很实用要记得</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function maopao($arr)&#123;</span><br><span class="line">    $len &#x3D; count($arr);</span><br><span class="line">    $n &#x3D; count($arr)-1;</span><br><span class="line">    for($i&#x3D;0;$i&lt;$len;$i++)&#123;</span><br><span class="line">        for($j&#x3D;0;$j&lt;$n;$j++)&#123;</span><br><span class="line">            if($arr[$j]&lt;$arr[$j+1])&#123;</span><br><span class="line">                $temp &#x3D; $arr[$j+1];</span><br><span class="line">                $arr[$j+1] &#x3D; $arr[$j];</span><br><span class="line">                $arr[$j] &#x3D;$temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return $arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function quick_sort($array) &#123;</span><br><span class="line"></span><br><span class="line">    if (count($array) &lt;&#x3D; 1) return $array;</span><br><span class="line"></span><br><span class="line">    $key &#x3D; $array[0];</span><br><span class="line"></span><br><span class="line">    $left_arr &#x3D; array();</span><br><span class="line"></span><br><span class="line">    $right_arr &#x3D; array();</span><br><span class="line"></span><br><span class="line">    for ($i&#x3D;1; $i&lt;count($array); $i++)&#123;</span><br><span class="line"></span><br><span class="line">        if ($array[$i] &lt;&#x3D; $key)</span><br><span class="line"></span><br><span class="line">            $left_arr[] &#x3D; $array[$i];</span><br><span class="line"></span><br><span class="line">        else</span><br><span class="line"></span><br><span class="line">            $right_arr[] &#x3D; $array[$i];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $left_arr &#x3D; quick_sort($left_arr);</span><br><span class="line"></span><br><span class="line">    $right_arr &#x3D; quick_sort($right_arr);</span><br><span class="line"></span><br><span class="line">    return array_merge($left_arr, array($key), $right_arr);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="请选出以下代码运行的结果："><a href="#请选出以下代码运行的结果：" class="headerlink" title="请选出以下代码运行的结果："></a>请选出以下代码运行的结果：</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php $a &#x3D; &quot;aabbzz&quot;; $a++; echo $a; ?&gt;</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">A b 　　　　　　　　　　　B aabbzz  　　　　　　　　　　C aabcaa</span><br><span class="line"></span><br><span class="line">解析： 字符串字母相加其实就是在末尾字母加一 如：$a &#x3D; &quot;a&quot;; $a++;答应结果就是 b,$a&#x3D;&#39;&#39;aa&#39;;结果就是ab 故$a &#x3D; &quot;aabb&quot;;打印结果就是 aabc ,如$a &#x3D; &quot;aabbz&quot;;结果就是 aabca,因为Z是末尾字母故加一变为a,向前一位进一,b就变为c,故结果为C；</span><br><span class="line"></span><br><span class="line"># 写出一下程序的输出结果：</span><br><span class="line">&lt;?php   　</span><br><span class="line"></span><br><span class="line">$data &#x3D; [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]; </span><br><span class="line"></span><br><span class="line">foreach($data as $k&#x3D;&gt;$v)&#123;</span><br><span class="line"></span><br><span class="line">    $v &#x3D; &amp;$data[$k];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;</span><br><span class="line"></span><br><span class="line">A $data &#x3D; [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]; 　　　　　　　　　　　B $data &#x3D; [&#39;b&#39;,&#39;b&#39;,&#39;c&#39;];   　　　　　　　　　　C $data &#x3D; [&#39;b&#39;,&#39;c&#39;,&#39;c&#39;]; </span><br><span class="line"></span><br><span class="line">解析：这里有个考点要记得 就是&amp;是引用；修改引用变量的值，那么空间的值也会改变，第一次循环 得到$v&#x3D;&amp;$data[0]&#x3D;&gt;&#39;a&#39;,第二次循环$v&#x3D;&amp;$data[1]&#x3D;&gt;&#39;b&#39;,可见第一次引用的$data[0]的值已经被改变，所以此时的$data[0]&#x3D;b,此时$v引用的$data[1],进入第三次循环 此时$v又变为 $v&#x3D;&amp;$data[2]&#x3D;&gt;&#39;c&#39;,,$v又一次改变，引用的$data[1]的值也被改变为C，所以此时的$data[1]&#x3D;c,这样循环结束 $data[0]&#x3D;&gt;&#39;b&#39;， $data[1]&#x3D;&gt;&#39;c&#39;， $data[2]&#x3D;&gt;&#39;c&#39;，</span><br><span class="line"></span><br><span class="line"># 写出一下程序的输出结果：&lt;?php $a&#x3D; 0.1; $b &#x3D; 0.7;if($a+$b &#x3D;&#x3D;0.8)&#123; echo true; &#125;else&#123; echo false; &#125; &gt;</span><br><span class="line"></span><br><span class="line">A 空; 　　　　B true;   　　　C false; 　　　　D、1；　　E、0；　　F:报错</span><br><span class="line"></span><br><span class="line">解析：这里的考点有两个：1，echo false和true的值；2、浮点类型不能用于精确计算；首先浮点类型的数据不能用于计算，他会将浮点类型转为二进制，所以有一定的损耗，故它无限接近于0.8，也就是0.79999999...，所以echo 应该是个false；echo false；结果是空；echo true；结果是1；</span><br><span class="line"></span><br><span class="line"># 用PHP写出显示客户端的IP和服务端的IP</span><br><span class="line"></span><br><span class="line">　　　　echo $_SERVER[‘REMOTE_ADDR’];&#x2F;&#x2F;客户端IP</span><br><span class="line"></span><br><span class="line">　　　　echo gethostbyname(“www.baidu.com”)&#x2F;&#x2F;服务端</span><br><span class="line"></span><br><span class="line"># 以下表达式的结果是：</span><br><span class="line"></span><br><span class="line">$a&#x3D; 0;</span><br><span class="line"></span><br><span class="line">$b&#x3D; 0;</span><br><span class="line"></span><br><span class="line">if($a&#x3D; 3&gt;0 || $b&#x3D; 3&gt;0)&#123;</span><br><span class="line"></span><br><span class="line">$a++;</span><br><span class="line"></span><br><span class="line">$b++;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo $a,$b;</span><br><span class="line"></span><br><span class="line">A报错；　　　　B:1,1；    (要是真的只有两个选项该多好肯定大家都选B)</span><br><span class="line"></span><br><span class="line">解析：此题考查的是运算符的优先级问题，首先在此题中比较运算符&gt;逻辑运算符&gt;赋值，所以1，先看 3&gt;0为true,2，因为是||运算所以后面的$b&#x3D;3&gt;0 形成短路作用，这时的$a&#x3D;true,$b&#x3D;0;</span><br><span class="line"></span><br><span class="line">　　故$a++;为1；$b++;为1这里解释下布尔类型运算不影响布尔类型结果；但是$b&#x3D;0;$b++;就改变为1， echo true；结果为1，</span><br><span class="line"></span><br><span class="line"># PHP中如何优化多个if...esleif语句的情况</span><br><span class="line">        解析：首先尽可能将表达式可能性越大的越往前面放，其次如果我们判断的内容比较复杂且 判断的值只是字符串，整型，浮点 那么就可以用switch...case来代替</span><br><span class="line"># 用正则 写出以139开头的手机号码</span><br></pre></td></tr></table></figure>
+<p>$str = ‘13812345678’;<br>$pattern = ‘/^139\d{8}$/‘;<br>preg_match($pattern,$str,$macth);<br>var_dump($macth);</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 用PHP方式对目录进行遍历</span><br></pre></td></tr></table></figure>
+<p>$dir = ‘./test’;</p>
+<p>function loopDir($dir){<br>    $handle = opendir($dir);<br>    while(false !==($file =readdir($handle))){<br>        if($file!=’.’&amp;&amp;$file!=’..’){<br>            echo $file.”<br>“;<br>            if(filetype($dir.’/‘.$file)==’dir’){<br>                loopDir($dir.’/‘.$file);<br>            }<br>        }<br>    }<br>}</p>
+<p>loopDir($dir);</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 请简单叙述 CGI fastCGI h和  PHP-FPM的区别</span><br><span class="line">CGI 代表为了联系PHP 和websevae 的一个桥梁</span><br><span class="line">fastCGI 是CGI的改良版</span><br><span class="line">PHP-FPM  进程管理器</span><br><span class="line"># 冒泡排序很实用要记得</span><br></pre></td></tr></table></figure>
+<p>function maopao($arr){<br>    $len = count($arr);<br>    $n = count($arr)-1;<br>    for($i=0;$i&lt;$len;$i++){<br>        for($j=0;$j&lt;$n;$j++){<br>            if($arr[$j]&lt;$arr[$j+1]){<br>                $temp = $arr[$j+1];<br>                $arr[$j+1] = $arr[$j];<br>                $arr[$j] =$temp;<br>            }<br>        }<br>    }<br>    return $arr;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 快速排序</span><br></pre></td></tr></table></figure>
+<p>function quick_sort($array) {</p>
+<pre><code>if (count($array) &lt;= 1) return $array;
+
+$key = $array[0];
+
+$left_arr = array();
+
+$right_arr = array();
+
+for ($i=1; $i&lt;count($array); $i++){
+
+    if ($array[$i] &lt;= $key)
+
+        $left_arr[] = $array[$i];
+
+    else
+
+        $right_arr[] = $array[$i];
+
+}
+
+$left_arr = quick_sort($left_arr);
+
+$right_arr = quick_sort($right_arr);
+
+return array_merge($left_arr, array($key), $right_arr);</code></pre><p>}</p>
+<p>```</p>
 <h1 id="请说明-PHP-中传值与传引用的区别，什么时候传值什么时候传引用"><a href="#请说明-PHP-中传值与传引用的区别，什么时候传值什么时候传引用" class="headerlink" title="请说明 PHP 中传值与传引用的区别，什么时候传值什么时候传引用?"></a>请说明 PHP 中传值与传引用的区别，什么时候传值什么时候传引用?</h1><p>按值传递：函数范围内对值的任何改变在函数外部都会被忽略</p>
 <p>按引用传递：函数范围内对值的任何改变在函数外部也能反映出这些修改</p>
 <p>优缺点：按值传递时，php必须复制值。特别是对于大型的字符串和对象来说，这将会是一个代价很大的操作。</p>
