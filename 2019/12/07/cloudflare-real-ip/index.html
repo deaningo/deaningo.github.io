@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport"
+  />
+  <meta name="description" content="" />
+  <meta
+    name="keywords"
+    content="偶思|"
+  />
+  <link rel="shortcut icon" href="/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" />
+  <title>偶思</title>
+  
+<link rel="stylesheet" href="/css/plugins/gitalk.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/jquery.min.js"></script>
+
+  
+<script src="/js/gitalk.min.js"></script>
+
+  
+<script src="/js/gotop.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+      <header class="header">
+  <div class="header-content">
+    <div class="header-title">
+      <a href="/" class="header-title-logo"
+        >偶思</a
+      >
+    </div>
+    <nav class="header-navbar">
+      <ul class="header-menu">
+        
+        <li class="header-menu-item">
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/archives"
+            >归档</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/categories"
+            >分类</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      <main class="main">
+        <article class="post-info">
+  <div class="post-content">
+    <h1 class="post-info-title">网站使用cloudflare cdn后怎么获取到真实的访客ip地址</h1>
+    <div class="post-meta">
+  <span class="post-time">2019-12-07</span>
+  
+  <span class="post-meta-split">|</span>
+  <span class="post-meta-category">
+    
+    <a href="/categories/Cloudflare/">Cloudflare</a>
+    </span
+  >
+   
+  <!-- 
+  <span class="post-meta-split">|</span>
+  <span class="post-meta-tag">
+    
+    <a href="/tags/Shell/">Shell</a>
+    
+    <a href="/tags/Cloudflare/">Cloudflare</a>
+    
+  </span>
+   -->
+</div>
+
+    <div class="post-info-content"><p>使用shell脚本获取cloudflare真实ip地址</p>
+<span id="more"></span>
+<pre class="line-numbers language-none"><code class="language-none">#!&#x2F;bin&#x2F;bash
+# Simple bash script to restore visitor real IP under Cloudflare with Nginx
+# Script also whitelist cloudflare IP with UFW (if installed)
+
+if [ &quot;$1&quot; &#x3D; &quot;--ufw&quot; ]; then
+    CF_UFW_SETUP&#x3D;&quot;y&quot;
+fi
+
+if [ -z &quot;$(command -v curl)&quot; ]; then
+    echo &quot;####################################&quot;
+    echo &quot;Installing CURL&quot;
+    echo &quot;####################################&quot;
+    apt-get update
+    apt-get install curl -y
+fi
+
+CURL_BIN&#x3D;$(command -v curl)
+CF_IPV4&#x3D;$($CURL_BIN -sL https:&#x2F;&#x2F;www.cloudflare.com&#x2F;ips-v4)
+CF_IPV6&#x3D;$($CURL_BIN -sL https:&#x2F;&#x2F;www.cloudflare.com&#x2F;ips-v6)
+
+[ ! -d &#x2F;etc&#x2F;nginx&#x2F;conf.d ] &amp;&amp; &#123;
+    mkdir -p &#x2F;etc&#x2F;nginx&#x2F;conf.d
+&#125;
+
+echo &#39;&#39; &gt; &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;cloudflare.conf
+echo &quot;####################################&quot;
+echo &quot;Adding Cloudflare IPv4&quot;
+echo &quot;####################################&quot;
+for cf_ip4 in $CF_IPV4; do
+    echo &quot;set_real_ip_from $cf_ip4;&quot; &gt;&gt; &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;cloudflare.conf
+    if [ &quot;$CF_UFW_SETUP&quot; &#x3D; &quot;y&quot; ]; then
+        ufw allow from $cf_ip4 to any port 80
+        ufw allow from $cf_ip4 to any port 443
+    fi
+done
+echo &quot;####################################&quot;
+echo &quot;Adding Cloudflare IPv6&quot;
+echo &quot;####################################&quot;
+for cf_ip6 in $CF_IPV6; do
+    echo &quot;set_real_ip_from $cf_ip6;&quot; &gt;&gt; &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;cloudflare.conf
+    if [ &quot;$CF_UFW_SETUP&quot; &#x3D; &quot;y&quot; ]; then
+        ufw allow from $cf_ip6 to any port 80
+        ufw allow from $cf_ip6 to any port 443
+    fi
+done
+echo &#39;real_ip_header CF-Connecting-IP;&#39; &gt;&gt; &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;cloudflare.conf
+
+if [ &quot;$CF_UFW_SETUP&quot; &#x3D; &quot;y&quot; ]; then
+    echo &quot;####################################&quot;
+    echo &quot;Reloading UFW&quot;
+    echo &quot;####################################&quot;
+    ufw reload
+fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+    <div id="gitalk-container"></div>
+    <div class="post-paging">
+      
+      <a href="/2019/12/08/linux-cpu-memory-check-tools/">
+          <div class="post-paging-last">
+              <span>上一篇</span>
+              <p>linux-cpu-memory-check-tools</p>
+          </div>
+      </a>
+      
+
+      
+      <a href="/2019/05/14/vueShop_api/">
+          <div class="post-paging-next">
+              <span>下一篇</span>
+              <p>Vue_shop api文档</p>
+          </div>
+      </a>
+      
+    </div>
+  </div>
+  
+
+</article>
+
+<script>
+  document.addEventListener('scroll', function () {
+    var dom = document.querySelector('.post-toc-content')
+    if (window.scrollY > 80) {
+      dom.classList.add('post-toc-fixed')
+    } else {
+      dom.classList.remove('post-toc-fixed')
+    }
+  })
+</script>
+
+      </main>
+      <footer class="footer">
+  <div class="footer-content">
+    
+    <div class="framework-info">
+      <span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a
+      ><span class="footer-separator">&nbsp;|&nbsp;</span><span>主题 - </span
+      ><a target="_blank" rel="noopener" href="https://github.com/deaningo/press"
+        ><span>Press</span></a
+      >
+    </div>
+    
+  </div>
+</footer>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"d599f4dcb5b85d531651","clientSecret":"be5b64dd41b04229c2430e9a194091ae9eba9884","repo":"gitcomment","owner":"deaningo","admin":"deaningo"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+
+<script>
+	console.log('\n %c Hexo-Press 主题 %c https://github.com/deaningo/press \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6b0b3204f0e23e2a0823139f7f6b4f13";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XRBKN0V9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3XRBKN0V9Q');
+</script>
+    </div>
+    
+<!---------------google-------------------><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  </body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport"
+  />
+  <meta name="description" content="" />
+  <meta
+    name="keywords"
+    content="偶思|"
+  />
+  <link rel="shortcut icon" href="/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" />
+  <title>偶思</title>
+  
+<link rel="stylesheet" href="/css/plugins/gitalk.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/jquery.min.js"></script>
+
+  
+<script src="/js/gitalk.min.js"></script>
+
+  
+<script src="/js/gotop.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+      <header class="header">
+  <div class="header-content">
+    <div class="header-title">
+      <a href="/" class="header-title-logo"
+        >偶思</a
+      >
+    </div>
+    <nav class="header-navbar">
+      <ul class="header-menu">
+        
+        <li class="header-menu-item">
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/archives"
+            >归档</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/categories"
+            >分类</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      <main class="main">
+        <article class="post-info">
+  <div class="post-content">
+    <h1 class="post-info-title">Vue学习</h1>
+    <div class="post-meta">
+  <span class="post-time">2018-05-14</span>
+  
+  <span class="post-meta-split">|</span>
+  <span class="post-meta-category">
+    
+    <a href="/categories/Vue/">Vue</a>
+    </span
+  >
+   
+  <!--  -->
+</div>
+
+    <div class="post-info-content"><p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<span id="more"></span>
+<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><p> a.文本<br> b.纯html<br>  v-html 防止xss攻击<br> c.表达式</p>
+<h2 id="指令-带有v-前缀"><a href="#指令-带有v-前缀" class="headerlink" title="指令:带有v-前缀"></a>指令:带有v-前缀</h2><p> v-bind<br> v-if<br> v-on:click<br> v-model:<br>   -双向数据绑定</p>
+<h2 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h2><p> v-bind:src =&gt; :src<br> v-on:click =&gt; @click</p>
+<h1 id="计算属性-复杂逻辑：computed"><a href="#计算属性-复杂逻辑：computed" class="headerlink" title="计算属性-复杂逻辑：computed"></a>计算属性-复杂逻辑：computed</h1><p> -计算属性时基于他们的依赖进行缓存的。<br> -计算属性只有在它的相关依赖才会重新请求</p>
+<h1 id="class与style绑定"><a href="#class与style绑定" class="headerlink" title="class与style绑定"></a>class与style绑定</h1><h2 id="绑定html-class"><a href="#绑定html-class" class="headerlink" title="绑定html class"></a>绑定html class</h2><p> -对象语法<br>    <pre class="line-numbers language-none"><code class="language-none">&lt;p class&#x3D;&quot;default&quot; :class&#x3D;&quot;&#123;active:isShow,show:isShow2&#125;&quot;&gt;class样式&lt;&#x2F;p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><br> -数组语法<br>    <pre class="line-numbers language-none"><code class="language-none">&lt;p class&#x3D;&quot;default&quot; :class&#x3D;&quot;[who,&#39;show&#39;]&quot;&gt;class样式&lt;&#x2F;p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></p>
+<h2 id="绑定内联样式"><a href="#绑定内联样式" class="headerlink" title="绑定内联样式"></a>绑定内联样式</h2><p> -对象语法<br>    <pre class="line-numbers language-none"><code class="language-none">&lt;p class&#x3D;&quot;default&quot; :style&#x3D;&quot;&#123;background:color&#125;&quot;&gt;class样式&lt;&#x2F;p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><br> -数组语法</p>
+<h1 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h1><p> v-if<br> v-else<br> template v-if:template不会渲染到dom节点<br> v-show：v-show不支持template和v-else</p>
+<p>#列表渲染<br> v-for<br>  a.in<br>  b.of<br> key<br>  -跟踪每个节点的身份，从而重用和重新排序<br>  -理想的key值时每项都有且唯一的id<br> 数组更新检测<br>  a.使用以下方式操作数组,可以检测更新<br>  push() pop() shift() unshift() splice() sort() reverse()</p>
+</div>
+    <div id="gitalk-container"></div>
+    <div class="post-paging">
+      
+      <a href="/2018/05/14/vue_scop/">
+          <div class="post-paging-last">
+              <span>上一篇</span>
+              <p>Vue学习-理解vue之element-ui中的 slot-scope</p>
+          </div>
+      </a>
+      
+
+      
+      <a href="/2017/06/14/nosql/">
+          <div class="post-paging-next">
+              <span>下一篇</span>
+              <p>NoSQL 简介</p>
+          </div>
+      </a>
+      
+    </div>
+  </div>
+  
+  <div class="post-toc">
+    <div class="post-toc-content">  
+      <h1 class="post-toc-title">文章目录</h1>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%80%BC"><span class="toc-text">插值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4-%E5%B8%A6%E6%9C%89v-%E5%89%8D%E7%BC%80"><span class="toc-text">指令:带有v-前缀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%A9%E5%86%99"><span class="toc-text">缩写</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7-%E5%A4%8D%E6%9D%82%E9%80%BB%E8%BE%91%EF%BC%9Acomputed"><span class="toc-text">计算属性-复杂逻辑：computed</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#class%E4%B8%8Estyle%E7%BB%91%E5%AE%9A"><span class="toc-text">class与style绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%91%E5%AE%9Ahtml-class"><span class="toc-text">绑定html class</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%91%E5%AE%9A%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F"><span class="toc-text">绑定内联样式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-text">条件渲染</span></a>
+    </div>
+  </div>
+  
+
+</article>
+
+<script>
+  document.addEventListener('scroll', function () {
+    var dom = document.querySelector('.post-toc-content')
+    if (window.scrollY > 80) {
+      dom.classList.add('post-toc-fixed')
+    } else {
+      dom.classList.remove('post-toc-fixed')
+    }
+  })
+</script>
+
+      </main>
+      <footer class="footer">
+  <div class="footer-content">
+    
+    <div class="framework-info">
+      <span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a
+      ><span class="footer-separator">&nbsp;|&nbsp;</span><span>主题 - </span
+      ><a target="_blank" rel="noopener" href="https://github.com/deaningo/press"
+        ><span>Press</span></a
+      >
+    </div>
+    
+  </div>
+</footer>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"d599f4dcb5b85d531651","clientSecret":"be5b64dd41b04229c2430e9a194091ae9eba9884","repo":"gitcomment","owner":"deaningo","admin":"deaningo"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+
+<script>
+	console.log('\n %c Hexo-Press 主题 %c https://github.com/deaningo/press \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6b0b3204f0e23e2a0823139f7f6b4f13";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XRBKN0V9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3XRBKN0V9Q');
+</script>
+    </div>
+    
+<!---------------google-------------------><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  </body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport"
+  />
+  <meta name="description" content="" />
+  <meta
+    name="keywords"
+    content="偶思|"
+  />
+  <link rel="shortcut icon" href="/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" />
+  <title>偶思</title>
+  
+<link rel="stylesheet" href="/css/plugins/gitalk.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/jquery.min.js"></script>
+
+  
+<script src="/js/gitalk.min.js"></script>
+
+  
+<script src="/js/gotop.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+      <header class="header">
+  <div class="header-content">
+    <div class="header-title">
+      <a href="/" class="header-title-logo"
+        >偶思</a
+      >
+    </div>
+    <nav class="header-navbar">
+      <ul class="header-menu">
+        
+        <li class="header-menu-item">
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/archives"
+            >归档</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/categories"
+            >分类</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      <main class="main">
+        <article class="post-info">
+  <div class="post-content">
+    <h1 class="post-info-title">Git 简明笔记</h1>
+    <div class="post-meta">
+  <span class="post-time">2022-12-09</span>
+   
+  <!-- 
+  <span class="post-meta-split">|</span>
+  <span class="post-meta-tag">
+    
+    <a href="/tags/Git/">Git</a>
+    
+  </span>
+   -->
+</div>
+
+    <div class="post-info-content"><p>学习git过程中的简易笔记</p>
+<span id="more"></span>
+<h2 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git?"></a>什么是git?</h2><p>简单来说，git就是一种简单的源代码管理系统，它对当前文件提供版本管理功能，核心思想就是建立一个对象数据库，将历史版本信息存入这个库中。</p>
+<h2 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h2><p>分支是使用git过程中常用的操作之一。几乎所有的git操作流程都离不开分支</p>
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><pre class="line-numbers language-none"><code class="language-none">git branch mybranch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><pre class="line-numbers language-none"><code class="language-none">git branch -d mybranch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><pre class="line-numbers language-none"><code class="language-none">git switch mybranch
+git checkout mybranch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="创建并切换到分支"><a href="#创建并切换到分支" class="headerlink" title="创建并切换到分支"></a>创建并切换到分支</h3><pre class="line-numbers language-none"><code class="language-none">git checkout -b mybranch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>git add命令用于将变化的文件，从工作区提交到暂存区。它的作用就是告诉 Git，下一次哪些变化需要保存到仓库区。用户可以使用git status命令查看目前的暂存区放置了哪些文件。</p>
+<pre class="line-numbers language-none"><code class="language-none">将制定文件放入暂存区
+git add &lt;file&gt;
+将制定目录下所有发生变化的文件放入暂存区
+git add &lt;dictory&gt;
+将当前目录下的所有文件放入暂存区
+git add .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>-u 参数表示只添加暂存区已有的文件（包括删除操作），但不添加新增的文件  <pre class="line-numbers language-none"><code class="language-none">git add -u<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>-A 或者-all表示把所有的修改都添加至暂存区，包括文件的新增、修改和删除  <pre class="line-numbers language-none"><code class="language-none">git add -A<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+  git 2.0版本开始，-A成为默认参数，比如 git add .就相当于git add . -A</li>
+<li>-f 表示强制添加某个文件，不管.gitignore是否包含了这个文件  <pre class="line-numbers language-none"><code class="language-none">git add -f &lt;filename&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>-p 表示进入交互模式，指定那些修改需要添加至暂存区。即使是同一个文件，也可以只提交部分变动  <pre class="line-numbers language-none"><code class="language-none">git add -p &lt;文件&#x2F;路径&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-cat-file"><a href="#git-cat-file" class="headerlink" title="git cat-file"></a>git cat-file</h2>git cat-file命令显示一个Git对象文件的内容。<pre class="line-numbers language-none"><code class="language-none">git cat-file -p 996icu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h2>git checkout 有多重用途</li>
+</ul>
+<ol>
+<li>切换分支<pre class="line-numbers language-none"><code class="language-none">git checkout mybranch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>切换到指定快照（commit）<pre class="line-numbers language-none"><code class="language-none">git checkout &lt;commitId&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>将工作区的指定文件恢复到上次commit的状态<pre class="line-numbers language-none"><code class="language-none">将指定文件从暂存区恢复到工作区,用来丢弃工作区对文件的修改
+git checkout -- &lt;filename&gt;
+还可以指定从某个 commit 恢复某个指定文件，这会同时改变工作区和暂存区
+git checkout HEAD~ -- &lt;filename&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>切换到某个tag<pre class="line-numbers language-none"><code class="language-none">git checkout tags&#x2F;1.0.1
+或者
+git chekout 1.0.1  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+使用 git chekout 1.0.1 切换到某个tag时，本地不得有1.0.1这个分支<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3></li>
+</ol>
+<ul>
+<li>-b 表示用于生成一个分支<br>·```<br>git checkout -b mybranch</li>
+</ul>
+<h2 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a>git cherry-pick</h2><p>git cherry-pick 表示复制一个提交节点并在当前分支做一次完全一样的新提交</p>
+<h3 id="单个commit合并"><a href="#单个commit合并" class="headerlink" title="单个commit合并"></a>单个commit合并</h3><pre class="line-numbers language-none"><code class="language-none">git cherry-pick &lt;commitID&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="多个连续commit合并"><a href="#多个连续commit合并" class="headerlink" title="多个连续commit合并"></a>多个连续commit合并</h3><p>commit_id到commit_idn之间，包括两端:</p>
+<pre class="line-numbers language-none"><code class="language-none">git cherry-pick commit_id..commit_idn<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>commit_id到commit_idn之间，非闭包:</p>
+<pre class="line-numbers language-none"><code class="language-none">git cherry-pick （commit_id..commit_idn]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>挑选多个commit:</p>
+<pre class="line-numbers language-none"><code class="language-none">git cherry-pick commit_id commit_idx commit_idy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h2><p>git clone 命令用于克隆远程仓库</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone alpha delta --bare<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上面命令表示将alpha目录（必须是git代码仓库），克隆到delta目录。bare参数表示delta目录只有仓库区，没有工作区和暂存区，即delta目录中就是.git目录的内容。</p>
+<h2 id="git-commit-tree"><a href="#git-commit-tree" class="headerlink" title="git commit-tree"></a>git commit-tree</h2><p>根据一个树对象，生成新的commit对象。</p>
+<pre class="line-numbers language-none"><code class="language-none">git commit-tree 16e19f -m &quot;First commit&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><p>git commit命令用于将暂存区中的变化提交到仓库区。</p>
+<p>-m参数用于指定 commit 信息，是必需的。如果省略-m参数，git commit会自动打开文本编辑器，要求输入。</p>
+<pre class="line-numbers language-none"><code class="language-none">git commit -m &quot;message&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>git commit命令可以跳过暂存区，直接将文件从工作区提交到仓库区。</p>
+<pre class="line-numbers language-none"><code class="language-none">git commit &lt;filename&gt;  -m &quot;message&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h3><ul>
+<li><p>-m 表示commit提交时信息</p>
+  <pre class="line-numbers language-none"><code class="language-none">git commit  -m &#39;message&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>-a 表示用于现将所有的工作区的变动文件，提交到暂存区</p>
+  <pre class="line-numbers language-none"><code class="language-none">git commit -am &quot;message&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>-allow-empty 参数用于没有提交信息的 commit。</p>
+  <pre class="line-numbers language-none"><code class="language-none">git commit --allow-empty<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>–amend用于撤销上一次的commit，提交一次新的commit</p>
+  <pre class="line-numbers language-none"><code class="language-none">git commit --amend -m &quot;change commit&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>–fixup 参数的含义是，当前添加的 commit 是以前某一个 commit 的修正。以后执行互动式的git rebase的时候，这两个 commit 将会合并成一个</p>
+  <pre class="line-numbers language-none"><code class="language-none">git commit --fixup &lt;commit&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>执行上面的命令，提交说明将自动生成，即在目标 commit 的提交说明的最前面，添加”fixup!”这个词。</p>
+</li>
+<li><p>–squash 参数的作用与–fixup类似，表示当前添加的 commit 应该与以前某一个 commit 合并成一个，以后执行互动式的git rebase的时候，这两个 commit 将会合并成一个。</p>
+  <pre class="line-numbers language-none"><code class="language-none">git commit --squash &lt;commit&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h2><p>git diff命令用于查看文件之间的差异。</p>
+<pre class="line-numbers language-none"><code class="language-none">查看工作区与暂存区的差异
+git diff
+查看某个文件的工作区与暂存区的差异
+git diff filename
+查看暂存区与当前 commit 的差异
+git diff --cached
+查看两个commit的差异
+git diff &lt;commitBefore&gt; &lt;commitAfter&gt;
+查看工作区与上一次commit之间的差异
+git diff HEAD
+查看工作区与某个 commit 的差异
+git diff &lt;commit&gt;
+显示两次提交之间的差异
+git diff [first-branch]...[second-branch]
+查看工作区与当前分支上一次提交的差异，但是局限于test文件
+git diff HEAD -- .&#x2F;test
+生成patch
+git format-patch master --stdout &gt; mypatch.patch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>比较两个分支</p>
+<pre class="line-numbers language-none"><code class="language-none">查看topic分支与master分支最新提交之间的差异
+git diff topic master
+查看自从topic分支建立以后，master分支发生的变化
+git diff topic...master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="git-hash-object"><a href="#git-hash-object" class="headerlink" title="git hash-object"></a>git hash-object</h2><p>git hash-object命令计算一个文件的git对象ID，即SHA1的哈希值。</p>
+<pre class="line-numbers language-none"><code class="language-none">echo &quot;hello&quot; | git hash-object --stdin
+echo &quot;hola&quot; | git hash-object -w --stdin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h2><p>git init命令将当前目录转为git仓库。<br>它会在当前目录下生成一个.git子目录，在其中写入git的配置和项目的快照。</p>
+<h2 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h2><p>git log命令按照提交时间从最晚到最早的顺序，列出所有 commit。</p>
+<pre class="line-numbers language-none"><code class="language-none">列出当前分支的版本历史
+git log
+列出某个文件的版本历史，包括文件改名
+git log --follow [file]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>查看远程分支的变动情况。</p>
+<pre class="line-numbers language-none"><code class="language-none">git log origin&#x2F;branch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查找log，即搜索commit信息。</p>
+<pre class="line-numbers language-none"><code class="language-none">git log --author&#x3D;authorName
+git log -i --grep&#x3D;&quot;Something in the message&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>上面代码中，-i参数表示搜索时忽略大小写。<br>查看某个范围内的commit</p>
+<pre class="line-numbers language-none"><code class="language-none">git log origin&#x2F;master..new
+[old]..[new] - everything you haven&#39;t pushed yet<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>美化输出。</p>
+<pre class="line-numbers language-none"><code class="language-none">git log --graph --decorate --pretty&#x3D;oneline --abbrev-commit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>—graph commit之间将展示连线</p>
+</li>
+<li><p>—decorate 显示commit里面的分支</p>
+</li>
+<li><p>—pretty=oneline 只显示commit信息的标题</p>
+</li>
+<li><p>—abbrev-commit 只显示commit SHA1的前7位</p>
+<h3 id="参数-3"><a href="#参数-3" class="headerlink" title="参数"></a>参数</h3><p>— –oneline<br>git log默认输出每个 commit 的详细信息，为了节省空间，–oneline参数让输出时，每个 commit 只占用一行。</p>
+<pre class="line-numbers language-none"><code class="language-none">git log --oneline --decorate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-ls-files"><a href="#git-ls-files" class="headerlink" title="git ls-files"></a>git ls-files</h2><p>列出没有被.gitignore忽视的文件</p>
+<pre class="line-numbers language-none"><code class="language-none">git ls-files --other --ignored --exclude-standard<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h2><p>将当前分支合并到指定分支。</p>
+<pre class="line-numbers language-none"><code class="language-none">git merge develop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>将当前分支与develop分支合并，产生的新的commit对象有两个父节点。</p>
+</li>
+</ul>
+<p>如果”指定分支”本身是当前分支的一个直接子节点，则会产生fast-forward合并，即合并不会产生新的节点，只是让当前分支指向”指定分支”的最新commit。</p>
+<p>Git合并所采用的方法是Three-way merge，及合并的时候除了要合併的兩個檔案，還加上它们共同的父节点。这样可以大大減少人為處理 conflict 的情況。如果采用two-way merge，則只用兩個檔案進行合併（svn默认就是这种合并方法。）</p>
+<h2 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h2><p>合并指定分支到当前分支</p>
+<pre class="line-numbers language-none"><code class="language-none">git pull . topic&#x2F;branch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>即使当前分支有没有 commit 的变动，也可以使用git pull从远程拉取分支。</p>
+<h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><p>git rebase 将当前分支移植到指定分支或指定commit之上。</p>
+<pre class="line-numbers language-none"><code class="language-none">git rebase -i &lt;commit&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>互动的rebase。</p>
+<pre class="line-numbers language-none"><code class="language-none">git rebase -i master~3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="参数-4"><a href="#参数-4" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>–autosquash参数用于互动模式，必须与-i参数配合使用。它会使得以前通过git commit –fixup和git commit –squash提交的 commit，按照指定的顺序排列（实质是选择提交说明以以fixup!或squash!开头的 commit），即–fixup的 commit 直接排在它所对应的 commit 的后面。</li>
+<li>–continue参数用于解决冲突以后，继续执行 rebase。<pre class="line-numbers language-none"><code class="language-none">git rebase --continue<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>-i参数会打开互动模式，让用户选择定制rebase的行为。<pre class="line-numbers language-none"><code class="language-none">git rebase -i develop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-ref-parse"><a href="#git-ref-parse" class="headerlink" title="git ref-parse"></a>git ref-parse</h2>显示某个指示符的SHA1哈希值。<pre class="line-numbers language-none"><code class="language-none">git ref-parse HEAD<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h2>为远程仓库添加别名。<pre class="line-numbers language-none"><code class="language-none">显示所有的远程主机
+git remote -v
+列出某个主机的详细信息
+git remote show name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+git remote命令的实质是在.git/config文件添加下面的内容。<pre class="line-numbers language-none"><code class="language-none">git remote add bravo ..&#x2F;bravo
+
+[remote &quot;bravo&quot;]
+    url &#x3D; ..&#x2F;bravo&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h2>git reset命令用于将当前分支指向另一个位置。<pre class="line-numbers language-none"><code class="language-none">将当期分支的指针倒退三个 commit，并且会改变暂存区
+git reset HEAD ~3
+倒退指针的同时，不改变暂存区
+git reset --soft HEAD~3
+倒退指针的同时，改变工作区
+git reset --hard HEAD~3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+如果不指定回滚的位置，那么等同于撤销修改。<pre class="line-numbers language-none"><code class="language-none">撤销上一次向暂存区添加的所有文件
+git reset
+无任何效果
+git reset --soft
+同时撤销暂存区和工作区的修改，回复到上一次提交的状态
+git reset --hard
+撤销上一次向暂存区添加的某个指定文件,不影响工作区中的该文件
+git reset -- &lt;filename&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="参数-5"><a href="#参数-5" class="headerlink" title="参数"></a>参数</h3></li>
+<li>soft: 不改变工作区和缓存区，只移动 HEAD 到指定 commit</li>
+<li>mixed: 只改变缓存区，不改变工作区。这是默认参数，通常用于撤销git add</li>
+<li>hard：改变工作区和暂存区到指定 commit。该参数等同于重置，可能会引起数据损失。git reset –hard等同于git reset –hard HEAD。</li>
+<li>-p表示键入交互模式，指定暂存区的哪些部分需要撤销。<h2 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a>git revert</h2>git revert命令用于撤销commit。<pre class="line-numbers language-none"><code class="language-none">git revert &lt;commitID&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-rm"><a href="#git-rm" class="headerlink" title="git rm"></a>git rm</h2>git rm命令用于删除文件。</li>
+</ul>
+<p>解除追踪某个文件，即该文件已被git add添加，然后抵消这个操作。</p>
+<pre class="line-numbers language-none"><code class="language-none">git rm --cached &lt;fileName&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-show"><a href="#git-show" class="headerlink" title="git show"></a>git show</h2><p> git show命令用于查看commit的内容<br> <pre class="line-numbers language-none"><code class="language-none">输出某次提交的元数据和内容变化
+git show [commit]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></p>
+<h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>git stash命令用于暂时保存没有提交的工作。运行该命令后，所有没有commit的代码，都会暂时从工作区移除，回到上次commit时的状态。<br>它处于git reset –hard（完全放弃还修改了一半的代码）与git commit（提交代码）命令之间，很类似于”暂停”按钮。</p>
+<pre class="line-numbers language-none"><code class="language-none">暂时保存没有提交的工作
+git stash
+列出所有的暂时保存的工作
+git stash list
+取出暂时保存的工作
+git stash apply stash@&#123;1&#125;
+恢复最近一次暂时保存的工作
+git stash pop
+丢弃最近一次的暂时保存的工作
+git stash drop
+删除所有的stash
+git stash clear<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h2><p>git tag命令用于为 commit 打标签。Tag 分两种：普通tag和注解tag。只有annotated tag 才會產生 object。</p>
+<pre class="line-numbers language-none"><code class="language-none">git tag tmp # 生成.git&#x2F;refs&#x2F;tags&#x2F;tmp
+git tag -a release
+git tag -a [VERSION] -m &quot;released [VERSION]&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>上面代码表示为当前commit打上一个带注解的标签，标签名为release。<br>普通标签的写法。</p>
+<pre class="line-numbers language-none"><code class="language-none">git tag 1.0.0
+git push --tags
+
+git tag v0.0.1
+git push origin master --tags<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="git-update-index"><a href="#git-update-index" class="headerlink" title="git update-index"></a>git update-index</h2><p>将工作区的文件加入缓存区域。</p>
+<pre class="line-numbers language-none"><code class="language-none">git update-index --add --cacheinfo \
+100644 5c1b14949828006ed75a3e8858957f86a2f7e2eb hola.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="git-update-ref"><a href="#git-update-ref" class="headerlink" title="git update-ref"></a>git update-ref</h2><p>git update-ref命令用于更新一个指针文件中的Git对象ID。</p>
+<pre class="line-numbers language-none"><code class="language-none">git update-ref refs&#x2F;heads&#x2F;master 107aff<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git-write-tree"><a href="#git-write-tree" class="headerlink" title="git write-tree"></a>git write-tree</h2><p>git write-tree命令用于根据当前缓存区域，生成一个树对象。</p>
+<pre class="line-numbers language-none"><code class="language-none">git write-tree<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>以上内容根据学习<a target="_blank" rel="noopener" href="https://www.bookstack.cn/read/git-tutorial/docs-tag.md">阮一峰 Git 教程</a>)时学习并记录部分内容。</p>
+</div>
+    <div id="gitalk-container"></div>
+    <div class="post-paging">
+      
+      <a href="/2022/12/20/scroll-view/">
+          <div class="post-paging-last">
+              <span>上一篇</span>
+              <p>微信小程序scroll-view之scroll-into-view不生效</p>
+          </div>
+      </a>
+      
+
+      
+      <a href="/2022/12/05/affiliate/">
+          <div class="post-paging-next">
+              <span>下一篇</span>
+              <p>Affiliate marketing常用的专业术语</p>
+          </div>
+      </a>
+      
+    </div>
+  </div>
+  
+  <div class="post-toc">
+    <div class="post-toc-content">  
+      <h1 class="post-toc-title">文章目录</h1>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFgit"><span class="toc-text">什么是git?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-branch"><span class="toc-text">git branch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-text">创建分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="toc-text">删除分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="toc-text">切换分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%88%87%E6%8D%A2%E5%88%B0%E5%88%86%E6%94%AF"><span class="toc-text">创建并切换到分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-add"><span class="toc-text">git add</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-cat-file"><span class="toc-text">git cat-file</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-checkout"><span class="toc-text">git checkout</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-1"><span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-cherry-pick"><span class="toc-text">git cherry-pick</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%AAcommit%E5%90%88%E5%B9%B6"><span class="toc-text">单个commit合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E8%BF%9E%E7%BB%ADcommit%E5%90%88%E5%B9%B6"><span class="toc-text">多个连续commit合并</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone"><span class="toc-text">git clone</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-commit-tree"><span class="toc-text">git commit-tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-commit"><span class="toc-text">git commit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-2"><span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-diff"><span class="toc-text">git diff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-hash-object"><span class="toc-text">git hash-object</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-init"><span class="toc-text">git init</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-log"><span class="toc-text">git log</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-3"><span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-ls-files"><span class="toc-text">git ls-files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-merge"><span class="toc-text">git merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-pull"><span class="toc-text">git pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-rebase"><span class="toc-text">git rebase</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-4"><span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-ref-parse"><span class="toc-text">git ref-parse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-remote"><span class="toc-text">git remote</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-reset"><span class="toc-text">git reset</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-5"><span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-revert"><span class="toc-text">git revert</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-rm"><span class="toc-text">git rm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-show"><span class="toc-text">git show</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash"><span class="toc-text">git stash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-tag"><span class="toc-text">git tag</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-update-index"><span class="toc-text">git update-index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-update-ref"><span class="toc-text">git update-ref</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-write-tree"><span class="toc-text">git write-tree</span></a></li></ol>
+    </div>
+  </div>
+  
+
+</article>
+
+<script>
+  document.addEventListener('scroll', function () {
+    var dom = document.querySelector('.post-toc-content')
+    if (window.scrollY > 80) {
+      dom.classList.add('post-toc-fixed')
+    } else {
+      dom.classList.remove('post-toc-fixed')
+    }
+  })
+</script>
+
+      </main>
+      <footer class="footer">
+  <div class="footer-content">
+    
+    <div class="framework-info">
+      <span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a
+      ><span class="footer-separator">&nbsp;|&nbsp;</span><span>主题 - </span
+      ><a target="_blank" rel="noopener" href="https://github.com/deaningo/press"
+        ><span>Press</span></a
+      >
+    </div>
+    
+  </div>
+</footer>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"d599f4dcb5b85d531651","clientSecret":"be5b64dd41b04229c2430e9a194091ae9eba9884","repo":"gitcomment","owner":"deaningo","admin":"deaningo"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+
+<script>
+	console.log('\n %c Hexo-Press 主题 %c https://github.com/deaningo/press \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6b0b3204f0e23e2a0823139f7f6b4f13";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XRBKN0V9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3XRBKN0V9Q');
+</script>
+    </div>
+    
+<!---------------google-------------------><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  </body>
+</html>
