@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport"
+  />
+  <meta name="description" content="" />
+  <meta
+    name="keywords"
+    content="偶思|"
+  />
+  <link rel="shortcut icon" href="/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" />
+  <title>偶思</title>
+  
+<link rel="stylesheet" href="/css/plugins/gitalk.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/jquery.min.js"></script>
+
+  
+<script src="/js/gitalk.min.js"></script>
+
+  
+<script src="/js/gotop.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+      <header class="header">
+  <div class="header-content">
+    <div class="header-title">
+      <a href="/" class="header-title-logo"
+        >偶思</a
+      >
+    </div>
+    <nav class="header-navbar">
+      <ul class="header-menu">
+        
+        <li class="header-menu-item">
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/archives"
+            >归档</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/categories"
+            >分类</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      <main class="main">
+        <article class="post-info">
+  <div class="post-content">
+    <h1 class="post-info-title">Vue学习-理解vue之element-ui中的 slot-scope</h1>
+    <div class="post-meta">
+  <span class="post-time">2018-05-14</span>
+  
+  <span class="post-meta-split">|</span>
+  <span class="post-meta-category">
+    
+    <a href="/categories/Vue/">Vue</a>
+    </span
+  >
+   
+  <!--  -->
+</div>
+
+    <div class="post-info-content"><p>理解vue之element-ui中的 slot-scope</p>
+<span id="more"></span>
+<h2 id="Table-column-Scoped-Slot"><a href="#Table-column-Scoped-Slot" class="headerlink" title="Table-column Scoped Slot"></a>Table-column Scoped Slot</h2><p>name        说明<br>—    自定义列的内容，参数为 { row, column, $index }<br>header    自定义表头的内容. 参数为 { column, $index }</p>
+<p>在实际的使用过程中，这种用法当然不仅仅局限于此，其他的地方也会用到。到底这里有什么特别之处呢？<br>我们看看普通的table用法：</p>
+<pre><code><pre class="line-numbers language-none"><code class="language-none">&lt;&#x2F;el-table-column&gt;
+             &lt;el-table-column prop&#x3D;&quot;mg_state&quot; label&#x3D;&quot;状态&quot;&gt;
+                 &lt;template slot-scope&#x3D;&quot;scope&quot;&gt;
+                    &#123;&#123;scope.row.mg_state&#125;&#125;
+             　　&lt;&#x2F;template&gt;
+         &lt;&#x2F;el-table-column&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
+<p>template（模版） 在这里属于一个固定用法： <template slot-scope="scope"></p>
+<p>我们主要说一下这个scope是个什么东西，按照element上的提示：</p>
+<p>通过 Scoped slot 可以获取到 row, column, $index 和 store（table 内部的状态管理）的数据</p>
+<p>还有重要的一点，scope又并非是整个table，我们只是能通过scope.row获得当前的行数据。</p>
+</div>
+    <div id="gitalk-container"></div>
+    <div class="post-paging">
+      
+      <a href="/2019/05/14/vueShop_api/">
+          <div class="post-paging-last">
+              <span>上一篇</span>
+              <p>Vue_shop api文档</p>
+          </div>
+      </a>
+      
+
+      
+      <a href="/2018/05/14/vue_study/">
+          <div class="post-paging-next">
+              <span>下一篇</span>
+              <p>Vue学习</p>
+          </div>
+      </a>
+      
+    </div>
+  </div>
+  
+  <div class="post-toc">
+    <div class="post-toc-content">  
+      <h1 class="post-toc-title">文章目录</h1>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Table-column-Scoped-Slot"><span class="toc-text">Table-column Scoped Slot</span></a></li></ol>
+    </div>
+  </div>
+  
+
+</article>
+
+<script>
+  document.addEventListener('scroll', function () {
+    var dom = document.querySelector('.post-toc-content')
+    if (window.scrollY > 80) {
+      dom.classList.add('post-toc-fixed')
+    } else {
+      dom.classList.remove('post-toc-fixed')
+    }
+  })
+</script>
+
+      </main>
+      <footer class="footer">
+  <div class="footer-content">
+    
+    <div class="framework-info">
+      <span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a
+      ><span class="footer-separator">&nbsp;|&nbsp;</span><span>主题 - </span
+      ><a target="_blank" rel="noopener" href="https://github.com/deaningo/press"
+        ><span>Press</span></a
+      >
+    </div>
+    
+  </div>
+</footer>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"d599f4dcb5b85d531651","clientSecret":"be5b64dd41b04229c2430e9a194091ae9eba9884","repo":"gitcomment","owner":"deaningo","admin":"deaningo"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+
+<script>
+	console.log('\n %c Hexo-Press 主题 %c https://github.com/deaningo/press \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6b0b3204f0e23e2a0823139f7f6b4f13";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XRBKN0V9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3XRBKN0V9Q');
+</script>
+    </div>
+    
+<!---------------google-------------------><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  </body>
+</html>

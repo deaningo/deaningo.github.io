@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport"
+  />
+  <meta name="description" content="" />
+  <meta
+    name="keywords"
+    content="偶思|"
+  />
+  <link rel="shortcut icon" href="/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" />
+  <title>偶思</title>
+  
+<link rel="stylesheet" href="/css/plugins/gitalk.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/jquery.min.js"></script>
+
+  
+<script src="/js/gitalk.min.js"></script>
+
+  
+<script src="/js/gotop.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+      <header class="header">
+  <div class="header-content">
+    <div class="header-title">
+      <a href="/" class="header-title-logo"
+        >偶思</a
+      >
+    </div>
+    <nav class="header-navbar">
+      <ul class="header-menu">
+        
+        <li class="header-menu-item">
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/archives"
+            >归档</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/categories"
+            >分类</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      <main class="main">
+        <article class="post-info">
+  <div class="post-content">
+    <h1 class="post-info-title">PHP date() 日期函数</h1>
+    <div class="post-meta">
+  <span class="post-time">2016-07-14</span>
+  
+  <span class="post-meta-split">|</span>
+  <span class="post-meta-category">
+    
+    <a href="/categories/PHP/">PHP</a>
+    </span
+  >
+   
+  <!-- 
+  <span class="post-meta-split">|</span>
+  <span class="post-meta-tag">
+    
+    <a href="/tags/date/">date</a>
+    
+    <a href="/tags/php/">php</a>
+    
+  </span>
+   -->
+</div>
+
+    <div class="post-info-content"><p>PHP date() 日期函数的基本使用和用法案例。</p>
+<span id="more"></span>
+<h1 id="PHP-date-日期函数"><a href="#PHP-date-日期函数" class="headerlink" title="PHP date() 日期函数"></a>PHP date() 日期函数</h1><p>PHP date() 函数</p>
+<p>PHP date() 函数用于格式化时间/日期。</p>
+<h1 id="PHP-date-函数"><a href="#PHP-date-函数" class="headerlink" title="PHP date() 函数"></a>PHP date() 函数</h1><p>PHP date() 函数可把时间戳格式化为可读性更好的日期和时间。</p>
+<p>时间戳是一个字符序列，表示一定的事件发生的日期/时间。</p>
+<p>PHP Date() - 格式化日期</p>
+<p>date() 函数的第一个必需参数 format 规定了如何格式化日期/时间。</p>
+<p>这里列出了一些可用的字符：</p>
+<p>d - 代表月中的天 (01 - 31)</p>
+<p>m - 代表月 (01 - 12)</p>
+<p>Y - 代表年 (四位数)</p>
+<p>如需了解 format 参数中可用的所有字符列表，请查阅我们的 PHP Date 参考手册，date() 函数。</p>
+<p>可以在字母之间插入其他字符，比如 “/“、”.” 或者 “-“，这样就可以增加附加格式了：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;?php
+echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br&gt;&quot;;
+echo date(&quot;Y.m.d&quot;) . &quot;&lt;br&gt;&quot;;
+echo date(&quot;Y-m-d&quot;);
+?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>格式字串可以识别以下 format 参数的字符串</p>
+<p><img src="https://img.php.cn/upload/image/198/160/267/1475994567325219.png" alt="avatar"></p>
+<p>例子</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;?php
+echo &quot;date()函数输出格式化日期:&lt;br &#x2F;&gt;&quot;;
+&#x2F;&#x2F; 常用
+echo date(&quot;l&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 注意是字符L的小写，不是1，也不是竖线
+echo date(&quot;Y-m-d H:i:s&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;
+echo date(&quot;Y&#x2F;m&#x2F;d&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;
+echo date(&quot;Y年m月d日 H时i分s秒&quot;) . &quot;&lt;br &#x2F;&gt;&quot;;
+&#x2F;&#x2F; 从日期格式的字符串中获取日期2005-03-21
+echo date(&quot;Y-m-d&quot;,strtotime(&quot;2005-03-21 11:15:38&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;
+echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 days&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 昨天的日期
+echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 week&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个星期今天的日期
+echo date(&quot;Y-m-d&quot;,strtotime(&quot;-1 month&quot;)).&quot;&lt;br &#x2F;&gt;&quot;;&#x2F;&#x2F; 上个月今天的日期
+echo date(&quot;Y-m-d H&quot;,strtotime(&quot;next Thursday&quot;));&#x2F;&#x2F; 下个周四的日期和小
+echo date(&#39;Y-m-d&#39;,strtotime(&#39;2015-06-08 -2 days&#39;)); &#x2F;&#x2F; 某个日期的前n天
+?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+    <div id="gitalk-container"></div>
+    <div class="post-paging">
+      
+      <a href="/2017/06/14/nosql/">
+          <div class="post-paging-last">
+              <span>上一篇</span>
+              <p>NoSQL 简介</p>
+          </div>
+      </a>
+      
+
+      
+    </div>
+  </div>
+  
+  <div class="post-toc">
+    <div class="post-toc-content">  
+      <h1 class="post-toc-title">文章目录</h1>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP-date-%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">PHP date() 日期函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP-date-%E5%87%BD%E6%95%B0"><span class="toc-text">PHP date() 函数</span></a></li></ol>
+    </div>
+  </div>
+  
+
+</article>
+
+<script>
+  document.addEventListener('scroll', function () {
+    var dom = document.querySelector('.post-toc-content')
+    if (window.scrollY > 80) {
+      dom.classList.add('post-toc-fixed')
+    } else {
+      dom.classList.remove('post-toc-fixed')
+    }
+  })
+</script>
+
+      </main>
+      <footer class="footer">
+  <div class="footer-content">
+    
+    <div class="framework-info">
+      <span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a
+      ><span class="footer-separator">&nbsp;|&nbsp;</span><span>主题 - </span
+      ><a target="_blank" rel="noopener" href="https://github.com/deaningo/press"
+        ><span>Press</span></a
+      >
+    </div>
+    
+  </div>
+</footer>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"d599f4dcb5b85d531651","clientSecret":"be5b64dd41b04229c2430e9a194091ae9eba9884","repo":"gitcomment","owner":"deaningo","admin":"deaningo"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+
+<script>
+	console.log('\n %c Hexo-Press 主题 %c https://github.com/deaningo/press \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6b0b3204f0e23e2a0823139f7f6b4f13";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XRBKN0V9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3XRBKN0V9Q');
+</script>
+    </div>
+    
+<!---------------google-------------------><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  </body>
+</html>

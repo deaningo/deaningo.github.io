@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport"
+  />
+  <meta name="description" content="" />
+  <meta
+    name="keywords"
+    content="偶思|"
+  />
+  <link rel="shortcut icon" href="/img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" />
+  <title>偶思</title>
+  
+<link rel="stylesheet" href="/css/plugins/gitalk.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/jquery.min.js"></script>
+
+  
+<script src="/js/gitalk.min.js"></script>
+
+  
+<script src="/js/gotop.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+      <header class="header">
+  <div class="header-content">
+    <div class="header-title">
+      <a href="/" class="header-title-logo"
+        >偶思</a
+      >
+    </div>
+    <nav class="header-navbar">
+      <ul class="header-menu">
+        
+        <li class="header-menu-item">
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/archives"
+            >归档</a
+          >
+        </li>
+        
+        <li class="header-menu-item">
+          <a href="/categories"
+            >分类</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      <main class="main">
+        <article class="post-info">
+  <div class="post-content">
+    <h1 class="post-info-title">git ssh 出现 connect to host github.com port 22:Connection timed out</h1>
+    <div class="post-meta">
+  <span class="post-time">2020-12-06</span>
+  
+  <span class="post-meta-split">|</span>
+  <span class="post-meta-category">
+    
+    <a href="/categories/Git/">Git</a>
+    </span
+  >
+   
+  <!-- 
+  <span class="post-meta-split">|</span>
+  <span class="post-meta-tag">
+    
+    <a href="/tags/Git/">Git</a>
+    
+  </span>
+   -->
+</div>
+
+    <div class="post-info-content"><p>使用git 的时候，提示如下错误：connect to host github.com port 22: Connection timed out</p>
+<span id="more"></span>
+
+<p><strong>解决方法</strong></p>
+<ol>
+<li><p>输入这个命令等待结果:</p>
+ <pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 结果如果是 “ssh: connect to host github.com port 22: Connection timed out”</p>
+</li>
+<li><p>打开存放ssh的目录</p>
+ <pre class="line-numbers language-none"><code class="language-none">cd ~&#x2F;.ssh
+ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p> 或者 直接去 c盘 里边找<br> 查看是否存在 id_rsa id_rsa.pun known_hosts 三个文件，如果没有就需要先配置好用户名和邮箱然后使用<br> ssh-keygen -t rsa -C “你刚才设置过得邮箱” 生成git ssh key 配置到服务端</p>
+</li>
+<li><p>如果存在，则新建config文件输入下面内容</p>
+ <pre class="line-numbers language-none"><code class="language-none">Host github.com
+User YourEmail@163.com
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~&#x2F;.ssh&#x2F;id_rsa
+Port 443<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>再次执行”ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>“ 一遍，会出现如下提示，回车”yes”即可</p>
+</li>
+<li><p>至此就可以正常用了。</p>
+</li>
+</ol>
+</div>
+    <div id="gitalk-container"></div>
+    <div class="post-paging">
+      
+      <a href="/2021/01/22/hexo-guide/">
+          <div class="post-paging-last">
+              <span>上一篇</span>
+              <p>Hexo 建站文档</p>
+          </div>
+      </a>
+      
+
+      
+      <a href="/2020/05/14/view_test/">
+          <div class="post-paging-next">
+              <span>下一篇</span>
+              <p>前端面试题2020最新总结</p>
+          </div>
+      </a>
+      
+    </div>
+  </div>
+  
+
+</article>
+
+<script>
+  document.addEventListener('scroll', function () {
+    var dom = document.querySelector('.post-toc-content')
+    if (window.scrollY > 80) {
+      dom.classList.add('post-toc-fixed')
+    } else {
+      dom.classList.remove('post-toc-fixed')
+    }
+  })
+</script>
+
+      </main>
+      <footer class="footer">
+  <div class="footer-content">
+    
+    <div class="framework-info">
+      <span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a
+      ><span class="footer-separator">&nbsp;|&nbsp;</span><span>主题 - </span
+      ><a target="_blank" rel="noopener" href="https://github.com/deaningo/press"
+        ><span>Press</span></a
+      >
+    </div>
+    
+  </div>
+</footer>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"d599f4dcb5b85d531651","clientSecret":"be5b64dd41b04229c2430e9a194091ae9eba9884","repo":"gitcomment","owner":"deaningo","admin":"deaningo"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+
+<script>
+	console.log('\n %c Hexo-Press 主题 %c https://github.com/deaningo/press \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?6b0b3204f0e23e2a0823139f7f6b4f13";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XRBKN0V9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3XRBKN0V9Q');
+</script>
+    </div>
+    
+<!---------------google-------------------><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  </body>
+</html>

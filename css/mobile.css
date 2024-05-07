@@ -1,0 +1,18 @@
+@media screen and (max-width: 768px) {
+  .container .main {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+  .container .post-info {
+    display: block;
+  }
+  .container .post-info .post-toc {
+    display: none;
+  }
+  .container .header .header-content {
+    padding: 0 0.5rem;
+  }
+  .container .footer .footer-content {
+    flex-direction: column;
+  }
+}
